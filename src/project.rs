@@ -89,10 +89,7 @@ pub fn terminal_cwd(pid: u32, title: &str) -> Option<PathBuf> {
     let is_agent = |p: &u32| names.get(p).is_some_and(|n| AGENTS.contains(&n.as_str()));
     let mut under = under;
     under.sort_by_key(|p| std::cmp::Reverse((is_agent(p), *p))); // agents, then newest
-    under
-        .iter()
-        .take(30)
-        .find_map(|p| std::fs::read_link(format!("/proc/{p}/cwd")).ok())
+    under.iter().take(30).find_map(|&p| process_cwd(p))
 }
 
 /// Whether a coding agent (Claude Code, Codex, ...) runs in the window of `pid`.
@@ -107,6 +104,23 @@ pub fn agent_in(pid: u32) -> bool {
 fn processes_under(pid: u32) -> (Vec<u32>, HashMap<u32, String>) {
     let mut children: HashMap<u32, Vec<u32>> = HashMap::new();
     let mut names: HashMap<u32, String> = HashMap::new();
+    for (p, ppid, name) in processes() {
+        children.entry(ppid).or_default().push(p);
+        names.insert(p, name);
+    }
+    let mut under = Vec::new();
+    let mut todo = children.get(&pid).cloned().unwrap_or_default();
+    while let Some(p) = todo.pop() {
+        under.push(p);
+        todo.extend(children.get(&p).into_iter().flatten());
+    }
+    (under, names)
+}
+
+/// Every process: its id, its parent's, and its name ("claude", as in AGENTS).
+#[cfg(target_os = "linux")]
+fn processes() -> Vec<(u32, u32, String)> {
+    let mut out = Vec::new();
     for entry in std::fs::read_dir("/proc").into_iter().flatten().flatten() {
         let Ok(p) = entry.file_name().to_string_lossy().parse::<u32>() else {
             continue;
@@ -122,16 +136,105 @@ fn processes_under(pid: u32) -> (Vec<u32>, HashMap<u32, String>) {
         let Some(ppid) = rest.split_whitespace().nth(1).and_then(|s| s.parse().ok()) else {
             continue;
         };
-        children.entry(ppid).or_default().push(p);
-        names.insert(p, comm);
+        out.push((p, ppid, comm));
     }
-    let mut under = Vec::new();
-    let mut todo = children.get(&pid).cloned().unwrap_or_default();
-    while let Some(p) = todo.pop() {
-        under.push(p);
-        todo.extend(children.get(&p).into_iter().flatten());
+    out
+}
+
+#[cfg(target_os = "linux")]
+fn process_cwd(pid: u32) -> Option<PathBuf> {
+    std::fs::read_link(format!("/proc/{pid}/cwd")).ok()
+}
+
+#[cfg(target_os = "macos")]
+fn processes() -> Vec<(u32, u32, String)> {
+    let Ok(out) = Command::new("ps")
+        .args(["-axo", "pid=,ppid=,comm="])
+        .output()
+    else {
+        return Vec::new();
+    };
+    parse_ps(&String::from_utf8_lossy(&out.stdout))
+}
+
+/// `ps -axo pid=,ppid=,comm=` lines; macOS gives comm as the executable's path.
+#[cfg(any(target_os = "macos", test))]
+fn parse_ps(text: &str) -> Vec<(u32, u32, String)> {
+    text.lines()
+        .filter_map(|line| {
+            let mut parts = line.trim_start().splitn(2, char::is_whitespace);
+            let pid = parts.next()?.parse().ok()?;
+            let rest = parts.next()?.trim_start();
+            let (ppid, comm) = rest.split_once(char::is_whitespace).unwrap_or((rest, ""));
+            let comm = comm.trim();
+            let name = comm.rsplit('/').next().unwrap_or(comm);
+            Some((pid, ppid.parse().ok()?, name.to_string()))
+        })
+        .collect()
+}
+
+#[cfg(target_os = "macos")]
+fn process_cwd(pid: u32) -> Option<PathBuf> {
+    let out = Command::new("lsof")
+        .args(["-a", "-p", &pid.to_string(), "-d", "cwd", "-Fn"])
+        .output()
+        .ok()?;
+    parse_lsof_cwd(&String::from_utf8_lossy(&out.stdout))
+}
+
+/// `lsof -Fn` output: the path is on the line that starts with "n".
+#[cfg(any(target_os = "macos", test))]
+fn parse_lsof_cwd(text: &str) -> Option<PathBuf> {
+    text.lines()
+        .find_map(|l| l.strip_prefix('n'))
+        .filter(|p| p.starts_with('/'))
+        .map(PathBuf::from)
+}
+
+#[cfg(target_os = "windows")]
+fn processes() -> Vec<(u32, u32, String)> {
+    use windows_sys::Win32::Foundation::{CloseHandle, INVALID_HANDLE_VALUE};
+    use windows_sys::Win32::System::Diagnostics::ToolHelp::{
+        CreateToolhelp32Snapshot, PROCESSENTRY32W, Process32FirstW, Process32NextW,
+        TH32CS_SNAPPROCESS,
+    };
+    let mut out = Vec::new();
+    // SAFETY: a snapshot handle, walked with a correctly sized entry, then closed.
+    unsafe {
+        let snapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+        if snapshot == INVALID_HANDLE_VALUE {
+            return out;
+        }
+        let mut entry: PROCESSENTRY32W = std::mem::zeroed();
+        entry.dwSize = std::mem::size_of::<PROCESSENTRY32W>() as u32;
+        let mut more = Process32FirstW(snapshot, &mut entry) != 0;
+        while more {
+            let len = entry.szExeFile.iter().position(|&c| c == 0).unwrap_or(0);
+            let exe = String::from_utf16_lossy(&entry.szExeFile[..len]);
+            out.push((
+                entry.th32ProcessID,
+                entry.th32ParentProcessID,
+                windows_exe_name(&exe),
+            ));
+            more = Process32NextW(snapshot, &mut entry) != 0;
+        }
+        CloseHandle(snapshot);
     }
-    (under, names)
+    out
+}
+
+/// "claude.exe" → "claude", to match AGENTS.
+#[cfg(any(target_os = "windows", test))]
+fn windows_exe_name(exe: &str) -> String {
+    let lower = exe.to_lowercase();
+    lower.strip_suffix(".exe").unwrap_or(&lower).to_string()
+}
+
+/// Windows doesn't expose another process's working directory without reading its
+/// memory; the project comes from Claude Code's hooks instead.
+#[cfg(target_os = "windows")]
+fn process_cwd(_pid: u32) -> Option<PathBuf> {
+    None
 }
 
 /// The git repository around `cwd`, or `cwd` itself (not home or /).
@@ -374,5 +477,31 @@ mod tests {
             file_candidates("open the setting file", &fs),
             ["src/settings.rs"]
         );
+    }
+
+    #[test]
+    fn macos_process_list() {
+        let ps = "    1     0 /sbin/launchd\n  612     1 /Applications/Utilities/Terminal.app/Contents/MacOS/Terminal\n 4810   612 -zsh\n 4900  4810 /Users/me/.local/bin/claude\n 5000     1 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome\n";
+        let list = parse_ps(ps);
+        assert_eq!(list[0], (1, 0, "launchd".to_string()));
+        assert_eq!(list[2], (4810, 612, "-zsh".to_string()));
+        assert_eq!(list[3], (4900, 4810, "claude".to_string()));
+        assert_eq!(list[4], (5000, 1, "Google Chrome".to_string()));
+    }
+
+    #[test]
+    fn macos_working_directory() {
+        assert_eq!(
+            parse_lsof_cwd("p4900\nfcwd\nn/Users/me/code/api\n"),
+            Some(PathBuf::from("/Users/me/code/api"))
+        );
+        assert_eq!(parse_lsof_cwd(""), None);
+    }
+
+    #[test]
+    fn windows_process_names() {
+        assert_eq!(windows_exe_name("claude.exe"), "claude");
+        assert_eq!(windows_exe_name("WindowsTerminal.EXE"), "windowsterminal");
+        assert_eq!(windows_exe_name("node"), "node");
     }
 }

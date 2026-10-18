@@ -4,9 +4,11 @@ Push-to-talk for Claude Code. Hold a key, talk, let go: your words are cleaned u
 ("wait, no", "um" and misheard names fixed) and pasted into
 Claude Code and sent. Speak English, French, German, Spanish or Portuguese; Claude gets
 English either way. In any other app it's plain dictation: it types, and never sends.
+Runs on Linux (Hyprland), macOS and Windows; the on-screen pill is Linux only.
 
-- **See it working**: a pill at the bottom of the screen shows the microphone's level and
-  your words as you say them, then "Transcribing" and "Cleaning up", then what went out.
+- **See it working** (Linux): a pill at the bottom of the screen shows the microphone's
+  level and your words as you say them, then "Transcribing" and "Cleaning up", then what
+  went out.
 - **Files by name**: "fix the bug in the auth file" reaches Claude as
   "Fix the bug in @src/auth.ts".
 - **Commands**: say just "stop" (Esc), "undo that" (Esc Esc, Claude Code's rewind),
@@ -35,8 +37,8 @@ Claude Code hooks ─▶ chime / notification / mic opens / answer read aloud (G
 
 ## Setup
 
-Needs a [Gradium](https://gradium.ai) API key, Hyprland on Wayland, PipeWire, `wtype`,
-`wl-clipboard`, `notify-send`, and GTK 4 with `gtk4-layer-shell` for the pill.
+Needs a [Gradium](https://gradium.ai) API key and [Rust](https://rustup.rs). On every
+system:
 
 ```sh
 cargo install --path . --root ~/.local
@@ -44,8 +46,13 @@ parley setup     # adds parley's hooks to ~/.claude/settings.json (backs it up f
 ```
 
 Put your keys in `~/.config/parley/env` (`GRADIUM_API_KEY=gd_...`, and
-`ANTHROPIC_API_KEY=sk-ant-...` for the cleanup), and bind keys in
-`~/.config/hypr/bindings.lua`:
+`ANTHROPIC_API_KEY=sk-ant-...` for the cleanup). `parley setup` also prints the key
+binding for your system, with the path parley was installed to.
+
+### Linux
+
+Needs Hyprland on Wayland, PipeWire, `wtype`, `wl-clipboard`, `notify-send`, and GTK 4
+with `gtk4-layer-shell` for the pill. Bind keys in `~/.config/hypr/bindings.lua`:
 
 ```lua
 o.bind("F7", "Talk to Claude (push-to-talk)", "~/.local/bin/parley start")
@@ -53,8 +60,62 @@ o.bind("F7", "Send to Claude (push-to-talk)", "~/.local/bin/parley stop", { rele
 o.bind("F8", "Cancel push-to-talk", "~/.local/bin/parley cancel")  -- press while holding F7
 ```
 
+### macOS
+
+Bind the key with [Hammerspoon](https://www.hammerspoon.org), in
+`~/.hammerspoon/init.lua` (with your own path):
+
+```lua
+local parley = "/Users/you/.local/bin/parley"
+local function run(arg) hs.task.new(parley, nil, { arg }):start() end
+hs.hotkey.bind({}, "F7", function() run("start") end, function() run("stop") end)
+hs.hotkey.bind({}, "F8", function() run("cancel") end)
+```
+
+parley runs as part of Hammerspoon, so that's the app macOS asks about: allow it the
+Microphone, Accessibility (to paste and press keys) and, when it asks, control of System
+Events (to see which app is in front). On a Mac keyboard F7 may be a media key: press
+fn+F7, or turn on "Use F1, F2, etc. keys as standard function keys".
+
+### Windows
+
+Bind the key with [AutoHotkey v2](https://www.autohotkey.com), in a `parley.ahk` (with
+your own path):
+
+```ahk
+#Requires AutoHotkey v2.0
+parley := '"C:\Users\you\.local\bin\parley.exe"'
+F7:: {
+    Run(parley ' start', , 'Hide')
+    KeyWait('F7')
+    Run(parley ' stop', , 'Hide')
+}
+F8::Run(parley ' cancel', , 'Hide')
+```
+
+`~` is your user folder (`%USERPROFILE%`). Building needs the Visual Studio Build Tools
+that Rust asks for. `git` (Git for Windows) is used to list a project's files. Windows
+won't let parley type into a window that runs as administrator unless parley does too.
+
+### Everywhere
+
 The first press starts the background process. Its log is
 `~/.local/state/parley/daemon.log`.
+
+What differs by system:
+
+| | Linux | macOS | Windows |
+| --- | --- | --- | --- |
+| Microphone and speakers | PipeWire | CoreAudio | WASAPI |
+| The pill | yes | no | no |
+| Paste | Ctrl+V, Shift+Insert in terminals | Cmd+V | Ctrl+V |
+| Notifications | `notify-send` | Notification Center | toast |
+| A "window" | each window | each app | each window |
+| The project, before Claude Code's hooks report it | from the terminal | from the terminal | after your first prompt |
+
+On macOS parley tells apps apart, not their windows: with two terminal windows open,
+an answer to a question goes to the terminal app, in whichever of its windows is in
+front.
 
 ## Commands
 
@@ -81,8 +142,8 @@ In `~/.config/parley/env`, read on every turn:
 | `PARLEY_CLEANUP` | `1` | Clean up every turn; `auto` skips short plain turns (faster, less accurate); `0` never |
 | `PARLEY_WARM_MIC` | `300` | Seconds the microphone stays open after a turn, so the next one starts with what you said just before the press (`always`, or `0` to close it after each turn) |
 | `PARLEY_STT_DELAY` | `16` | Gradium's lookahead in 80 ms frames: higher is more accurate and finishes later |
-| `PARLEY_MIC` | default input | A PipeWire input to record from (name or serial, as in `pw-record --target`) |
-| `PARLEY_OVERLAY` | `1` | Show the pill at the bottom of the screen |
+| `PARLEY_MIC` | default input | The input to record from: on Linux a PipeWire name or serial (as in `pw-record --target`); on macOS and Windows part of the device's name |
+| `PARLEY_OVERLAY` | `1` | Show the pill at the bottom of the screen (Linux) |
 | `PARLEY_AUTO_ANSWER` | `1` | Open the microphone when Claude ends its turn with a question |
 | `PARLEY_VOICE` | per language | Gradium voice id for answers read aloud |
 | `PARLEY_DRY_RUN` | `0` | Log what would be typed instead of typing it |
@@ -134,17 +195,19 @@ What parley does about it:
   model, which writes the transcript in English.
 - **Back to back**: cleanup, paste and spoken commands run in order on their own task,
   so a key press during the previous turn's cleanup starts listening at once.
-- **The microphone** (`src/audio.rs`): one pw-record process, kept open between turns
-  for `PARLEY_WARM_MIC`; between turns only a 400 ms ring buffer is kept.
-- **The pill** (`src/overlay.rs`): a separate `parley overlay` process, GTK 4 on a
+- **The microphone** (`src/audio/`): one pw-record process on Linux, one CoreAudio or
+  WASAPI stream (through cpal, converted to 24 kHz mono) on macOS and Windows, kept open
+  between turns for `PARLEY_WARM_MIC`; between turns only a 400 ms ring buffer is kept.
+- **The pill** (`src/overlay/`): a separate `parley overlay` process, GTK 4 on a
   layer-shell surface that never takes keyboard focus and lets clicks through, started on
-  first use and fed JSON lines by the daemon. Without it parley works the same.
+  first use and fed JSON lines by the daemon. Without it parley works the same, which is
+  how it works on macOS and Windows.
 - **Recognising names** (`src/config.rs`): Gradium's keyword boosting gets the coding
   words, your `words.txt` and words from the
   project's file names, so "auth" isn't heard as "off".
 - **Files** (`src/project.rs`): the project is the
   Claude session's directory (from its hooks), or the directory of the agent running in
-  the terminal. When what you said mentions a file, the project files it most likely
+  the terminal (Linux and macOS; Windows doesn't show another program's directory). When what you said mentions a file, the project files it most likely
   names go to the cleanup, which writes them as `@path`.
 - **Coding agents and other apps**: a window counts as a coding agent if a Claude session
   you've talked to lives there or an agent (claude, codex, aider, ...) runs in its
@@ -179,8 +242,13 @@ What parley does about it:
   Gradium's semantic VAD is confident you're done (or after 8 s of nothing). The answer
   goes to that session's window, which is focused first if you've moved away. Pressing
   the key during an answer turn replaces it with a normal one.
-- **Pasting** (`src/desktop.rs`): `wl-copy` + `wtype`, Shift+Insert in terminals and
-  VS Code-family editors, Ctrl+V elsewhere; the clipboard is restored a second later.
+- **Pasting** (`src/desktop/`): on Linux `wl-copy` + `wtype`, Shift+Insert in terminals
+  and VS Code-family editors, Ctrl+V elsewhere; on macOS `pbcopy` and Cmd+V through
+  System Events; on Windows the clipboard and Ctrl+V through `SendInput`. The clipboard
+  is restored a second later (on macOS and Windows, its text).
+- **Talking to the background process** (`src/ipc.rs`): a Unix socket, or on Windows a
+  named pipe. On Windows `parley setup` writes the hook as the program and its argument,
+  so no shell has to quote the path.
 - **History** (`src/history.rs`): the last 500 turns in
   `~/.local/state/parley/history.jsonl`, the audio of the last 10 in `turns/`.
 

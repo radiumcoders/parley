@@ -1,25 +1,24 @@
 //! The background process: push-to-talk turns, pasting, and reacting to Claude Code hooks.
 //!
-//! `parley start`/`stop`/`toggle` and `parley hook` talk to it over a Unix socket.
+//! `parley start`/`stop`/`toggle` and `parley hook` talk to it over a Unix socket (a
+//! named pipe on Windows).
 
 use std::collections::{HashMap, HashSet};
 use std::path::PathBuf;
 use std::time::{Duration, Instant};
 
-use anyhow::{Context, Result};
+use anyhow::Result;
 use serde_json::Value;
-use tokio::io::{AsyncReadExt, AsyncWriteExt};
-use tokio::net::{UnixListener, UnixStream};
 use tokio::sync::{mpsc, oneshot};
 
 use crate::audio::{self, Chime, Mic, chime};
 use crate::cleanup::Cleaner;
 use crate::commands::{self, Command};
 use crate::config::{self, Cleanup, Settings, Submit};
-use crate::desktop::{self, Window, notify};
+use crate::desktop::{self, Key, Window, notify};
 use crate::listen::{self, Mode};
 use crate::overlay::Ui;
-use crate::{history, project, speak, words};
+use crate::{history, ipc, project, speak, words};
 
 /// A prompt submitted this soon after a paste into the same window was ours: that's how a
 /// Claude session becomes one you talk to.
@@ -101,15 +100,11 @@ struct Daemon {
 }
 
 pub async fn run() -> Result<()> {
-    let path = config::socket_path();
-    if UnixStream::connect(&path).await.is_ok() {
+    if ipc::running().await {
         log("already running");
         return Ok(());
     }
-    let _ = std::fs::remove_file(&path);
-    let listener =
-        UnixListener::bind(&path).with_context(|| format!("binding {}", path.display()))?;
-    log(&format!("listening on {}", path.display()));
+    let listener = ipc::bind()?;
 
     let (tx, mut rx) = mpsc::unbounded_channel();
     tokio::spawn(serve(listener, tx.clone()));
@@ -623,17 +618,17 @@ async fn focus(target: Option<&Window>) {
 
 async fn run_command(command: &Command) -> Result<()> {
     match command {
-        Command::Stop => desktop::wtype(&["-k", "Escape"]).await,
+        Command::Stop => desktop::press(Key::Escape).await,
         Command::Rewind => {
-            desktop::wtype(&["-k", "Escape"]).await?;
+            desktop::press(Key::Escape).await?;
             tokio::time::sleep(Duration::from_millis(80)).await;
-            desktop::wtype(&["-k", "Escape"]).await
+            desktop::press(Key::Escape).await
         }
         Command::Slash(slash) => {
-            desktop::wtype(&[slash]).await?;
+            desktop::type_text(slash).await?;
             // Let Claude Code's command menu catch up before Enter.
             tokio::time::sleep(Duration::from_millis(150)).await;
-            desktop::wtype(&["-k", "Return"]).await
+            desktop::press(Key::Return).await
         }
     }
 }
@@ -756,14 +751,13 @@ fn first_line(message: &str) -> String {
 }
 
 /// One request per connection: a command line, then (for `hook`) the hook's JSON.
-async fn serve(listener: UnixListener, events: mpsc::UnboundedSender<Event>) {
-    while let Ok((stream, _)) = listener.accept().await {
+async fn serve(mut listener: ipc::Listener, events: mpsc::UnboundedSender<Event>) {
+    while let Ok(stream) = listener.accept().await {
         let events = events.clone();
         tokio::spawn(async move {
-            let mut buf = Vec::new();
-            if stream.take(4 << 20).read_to_end(&mut buf).await.is_err() {
+            let Some(buf) = ipc::read_request(stream).await else {
                 return;
-            }
+            };
             let text = String::from_utf8_lossy(&buf);
             let (command, payload) = text.split_once('\n').unwrap_or((&text, ""));
             let event = match command.trim() {
@@ -784,12 +778,7 @@ async fn serve(listener: UnixListener, events: mpsc::UnboundedSender<Event>) {
 
 /// Sends a command to the daemon.
 pub async fn send(command: &str, payload: &str) -> Result<()> {
-    let mut stream = UnixStream::connect(config::socket_path()).await?;
-    stream
-        .write_all(format!("{command}\n{payload}").as_bytes())
-        .await?;
-    stream.shutdown().await?;
-    Ok(())
+    ipc::send(format!("{command}\n{payload}").as_bytes()).await
 }
 
 pub fn log(message: &str) {

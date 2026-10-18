@@ -7,10 +7,30 @@ edition = "2024"
 anyhow = "1.0.104"
 clap = { version = "4.6.7", features = ["derive", "env"] }
 gradium = { version = "0.1.16", default-features = false, features = ["rustls"] }
-gtk4 = { version = "0.11", features = ["v4_12"] }
-gtk4-layer-shell = "0.8"
 regex = "1.13.1"
 reqwest = { version = "0.13", default-features = false, features = ["json", "rustls"] }
 rustls = "0.23"
 serde_json = { version = "1.0.154", features = ["preserve_order"] }
 tokio = { version = "1.53.3", features = ["full"] }
+
+# Linux: the on-screen pill (GTK 4 on a layer-shell surface).
+[target.'cfg(target_os = "linux")'.dependencies]
+gtk4 = { version = "0.11", features = ["v4_12"] }
+gtk4-layer-shell = "0.8"
+
+# macOS and Windows: the microphone and speakers (Linux uses PipeWire's pw-record/pw-play).
+[target.'cfg(any(target_os = "macos", target_os = "windows"))'.dependencies]
+cpal = "0.18.2"
+
+# Windows: the focused window, keys and the clipboard; and rustls's crypto (aws-lc) built
+# from its prebuilt assembly, so MSVC builds don't need NASM installed.
+[target.'cfg(target_os = "windows")'.dependencies]
+aws-lc-rs = { version = "1.18.2", features = ["prebuilt-nasm"] }
+arboard = { version = "3.7.0", default-features = false }
+windows-sys = { version = "0.61.2", features = [
+    "Win32_Foundation",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_Threading",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_WindowsAndMessaging",
+] }

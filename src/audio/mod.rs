@@ -1,13 +1,25 @@
-//! Microphone and chimes, through PipeWire's pw-record and pw-play.
+//! Microphone and chimes: PipeWire's pw-record and pw-play on Linux, CoreAudio and
+//! WASAPI (through cpal) on macOS and Windows.
+
+#[cfg(any(target_os = "macos", target_os = "windows"))]
+mod device;
+#[cfg(target_os = "linux")]
+mod pipewire;
+#[cfg(any(target_os = "macos", target_os = "windows", test))]
+mod resample;
+
+#[cfg(any(target_os = "macos", target_os = "windows"))]
+use device as backend;
+#[cfg(target_os = "linux")]
+use pipewire as backend;
+
+pub use backend::Player;
 
 use std::collections::VecDeque;
 use std::f32::consts::TAU;
-use std::process::Stdio;
 use std::sync::{Arc, Mutex};
 
-use anyhow::{Context, Result};
-use tokio::io::{AsyncReadExt, AsyncWriteExt};
-use tokio::process::Command;
+use anyhow::Result;
 use tokio::sync::mpsc;
 
 /// What Gradium STT expects for "pcm": 24 kHz, 16-bit, mono.
@@ -20,7 +32,7 @@ pub const CHUNK_BYTES: usize = 1920 * 2;
 /// benchmark (src/eval.rs) losing the first 120 ms doubled the error rate.
 const PREROLL_CHUNKS: usize = 5; // 400 ms
 
-/// The default input, through pw-record. Between turns it can stay open ("warm") so a
+/// The default input (pw-record on Linux). Between turns it can stay open ("warm") so a
 /// turn can start with the moment before the key press. Warm audio only sits in a
 /// 400 ms ring in memory: nothing is sent or saved until a turn takes it.
 pub struct Mic {
@@ -35,36 +47,16 @@ struct Shared {
 }
 
 impl Mic {
-    /// `target`: a PipeWire input by name or serial; the default input if `None`.
+    /// `target`: an input by name (or, with PipeWire, serial); the default input if `None`.
     pub fn open(target: Option<&str>) -> Result<Mic> {
-        let mut command = Command::new("pw-record");
-        if let Some(target) = target {
-            command.args(["--target", target]);
-        }
-        let mut child = command
-            .args([
-                "--raw",
-                "--rate",
-                &IN_RATE.to_string(),
-                "--channels",
-                "1",
-                "--format",
-                "s16",
-                "-",
-            ])
-            .stdout(Stdio::piped())
-            .stderr(Stdio::null())
-            .kill_on_drop(true)
-            .spawn()
-            .context("starting pw-record")?;
-        let mut stdout = child.stdout.take().unwrap();
+        let mut input = backend::Input::open(target)?;
         let shared = Arc::new(Mutex::new(Shared::default()));
         let reader = tokio::spawn({
             let shared = shared.clone();
             async move {
-                let _child = child; // killed when this task ends
                 let mut chunk = vec![0u8; CHUNK_BYTES];
-                while stdout.read_exact(&mut chunk).await.is_ok() {
+                // The input stops when this task ends.
+                while input.read(&mut chunk).await {
                     let mut s = shared.lock().unwrap();
                     if let Some(turn) = &s.turn {
                         match turn.try_send(chunk.clone()) {
@@ -79,14 +71,14 @@ impl Mic {
                     }
                     s.ring.push_back(chunk.clone());
                 }
-                // pw-record ended: the turn's audio ends too, so it doesn't wait forever.
+                // The input ended: the turn's audio ends too, so it doesn't wait forever.
                 shared.lock().unwrap().turn = None;
             }
         });
         Ok(Mic { shared, reader })
     }
 
-    /// pw-record is still running.
+    /// The input is still running.
     pub fn alive(&self) -> bool {
         !self.reader.is_finished()
     }
@@ -170,28 +162,11 @@ pub fn chime(chime: Chime) {
     };
     let pcm = tones(notes);
     tokio::spawn(async move {
-        let Ok(mut child) = Command::new("pw-play")
-            .args([
-                "--raw",
-                "--rate",
-                "48000",
-                "--channels",
-                "1",
-                "--format",
-                "s16",
-                "-",
-            ])
-            .stdin(Stdio::piped())
-            .stdout(Stdio::null())
-            .stderr(Stdio::null())
-            .spawn()
-        else {
+        let Ok(mut player) = Player::start() else {
             return;
         };
-        if let Some(mut stdin) = child.stdin.take() {
-            let _ = stdin.write_all(&pcm).await;
-        }
-        let _ = child.wait().await;
+        let _ = player.write(&pcm).await;
+        let _ = player.finish().await;
     });
 }
 

@@ -205,9 +205,15 @@ pub fn dir() -> PathBuf {
 }
 
 pub fn home() -> PathBuf {
-    PathBuf::from(std::env::var_os("HOME").unwrap_or_default())
+    // Windows sets USERPROFILE; HOME there depends on which shell started parley.
+    #[cfg(windows)]
+    let home = std::env::var_os("USERPROFILE").or_else(|| std::env::var_os("HOME"));
+    #[cfg(not(windows))]
+    let home = std::env::var_os("HOME");
+    PathBuf::from(home.unwrap_or_default())
 }
 
+#[cfg(unix)]
 pub fn socket_path() -> PathBuf {
     match std::env::var_os("XDG_RUNTIME_DIR") {
         Some(dir) => PathBuf::from(dir).join("parley.sock"),

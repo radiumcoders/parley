@@ -1,14 +1,12 @@
 //! Speaking Claude's answer, when you asked for it out loud: Gradium text-to-speech
-//! into pw-play.
+//! into the speakers (pw-play on Linux).
 
-use std::process::Stdio;
-
-use anyhow::{Context, Result};
+use anyhow::Result;
 use gradium::protocol::AudioFormat;
 use gradium::protocol::tts::{Response, Setup};
 use regex::Regex;
-use tokio::io::AsyncWriteExt;
-use tokio::process::Command;
+
+use crate::audio::Player;
 
 /// Speaks `text` and returns once it has finished playing. Dropping the future stops it.
 pub async fn speak(client: &gradium::Client, voice_id: &str, text: &str) -> Result<()> {
@@ -19,24 +17,7 @@ pub async fn speak(client: &gradium::Client, voice_id: &str, text: &str) -> Resu
         return Ok(());
     }
 
-    let mut player = Command::new("pw-play")
-        .args([
-            "--raw",
-            "--rate",
-            "48000",
-            "--channels",
-            "1",
-            "--format",
-            "s16",
-            "-",
-        ])
-        .stdin(Stdio::piped())
-        .stdout(Stdio::null())
-        .stderr(Stdio::null())
-        .kill_on_drop(true)
-        .spawn()
-        .context("starting pw-play")?;
-    let mut out = player.stdin.take().unwrap();
+    let mut player = Player::start()?;
 
     let setup = Setup::new(voice_id).with_output_format(AudioFormat::Pcm);
     let (mut tx, mut rx) = client.tts_stream(setup).await?.split();
@@ -50,14 +31,13 @@ pub async fn speak(client: &gradium::Client, voice_id: &str, text: &str) -> Resu
     let receive = async {
         while let Some(msg) = rx.next_message().await? {
             if let Response::Audio(a) = msg {
-                out.write_all(&a.raw_audio()?).await?;
+                player.write(&a.raw_audio()?).await?;
             }
         }
         anyhow::Ok(())
     };
     tokio::try_join!(send, receive)?;
-    drop(out); // end of input: pw-play finishes what it has, then exits
-    player.wait().await?;
+    player.finish().await?;
     Ok(())
 }
 

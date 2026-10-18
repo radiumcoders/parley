@@ -14,6 +14,7 @@ mod desktop;
 #[cfg(test)]
 mod eval;
 mod history;
+mod ipc;
 mod listen;
 mod overlay;
 mod project;
@@ -22,7 +23,10 @@ mod speak;
 mod words;
 
 use std::io::Read;
+#[cfg(unix)]
 use std::os::unix::process::CommandExt;
+#[cfg(windows)]
+use std::os::windows::process::CommandExt;
 use std::process::Stdio;
 use std::time::Duration;
 
@@ -184,13 +188,18 @@ fn spawn_daemon() -> Result<()> {
         .create(true)
         .append(true)
         .open(&log)?;
-    std::process::Command::new(std::env::current_exe()?)
+    let mut command = std::process::Command::new(std::env::current_exe()?);
+    command
         .arg("daemon")
         .stdin(Stdio::null())
         .stdout(log.try_clone()?)
-        .stderr(log)
-        .process_group(0)
-        .spawn()
-        .context("starting the parley daemon")?;
+        .stderr(log);
+    // Its own process group, so it outlives the key binding that started it.
+    #[cfg(unix)]
+    command.process_group(0);
+    // DETACHED_PROCESS | CREATE_NEW_PROCESS_GROUP: no console window, outlives its parent.
+    #[cfg(windows)]
+    command.creation_flags(0x0000_0008 | 0x0000_0200);
+    command.spawn().context("starting the parley daemon")?;
     Ok(())
 }

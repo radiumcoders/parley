@@ -7,8 +7,13 @@ Transcripts go through parley's cleanup (`src/cleanup.rs`, Claude Haiku with `AN
 from `~/.config/parley/env`; vocabulary and learning in `src/words.rs`, your words in
 `~/.config/parley/words.txt`) before pasting. Speech is Gradium only (a hackathon entry): never
 swap in another STT/TTS provider.
-Linux only: Hyprland, PipeWire (`pw-record`, `pw-play`), `wtype`, `wl-clipboard`, `notify-send`,
-GTK 4 + gtk4-layer-shell for the on-screen pill (`src/overlay.rs`, run as `parley overlay`).
+Linux is home: Hyprland, PipeWire (`pw-record`, `pw-play`), `wtype`, `wl-clipboard`, `notify-send`,
+GTK 4 + gtk4-layer-shell for the on-screen pill (`src/overlay/`, run as `parley overlay`, Linux only).
+macOS and Windows have their own backends behind the same functions: `src/audio/device.rs`
+(cpal), `src/desktop/{macos,windows}.rs`, the process table in `src/project.rs`, and `src/ipc.rs`
+(a named pipe on Windows). Nobody here runs them: type-check them with
+`cargo clippy --all-targets --target x86_64-pc-windows-gnu` (or `aarch64-apple-darwin`), with a C
+cross-compiler for aws-lc's build script (`CC_<target>` set to a `zig cc -target ...` wrapper).
 
 - `cargo test`, `cargo clippy --all-targets`, `cargo fmt`. Install with `cargo install --path . --root ~/.local`;
   the Hyprland binding and the hooks call `~/.local/bin/parley`, so reinstall after changes and

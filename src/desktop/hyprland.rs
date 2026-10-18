@@ -1,5 +1,4 @@
-//! The desktop side: which window is focused, pasting into it, notifications.
-//! Hyprland on Wayland (hyprctl, wl-clipboard, wtype).
+//! Linux: Hyprland on Wayland (hyprctl, wl-clipboard, wtype).
 
 use std::process::Stdio;
 use std::time::Duration;
@@ -9,17 +8,7 @@ use serde_json::Value;
 use tokio::io::AsyncWriteExt;
 use tokio::process::Command;
 
-#[derive(Clone, Debug)]
-pub struct Window {
-    pub address: String,
-    pub pid: Option<u32>,
-    pub title: String,
-    /// The app, as Hyprland names it ("kitty", "firefox").
-    pub class: String,
-    /// Terminals (Omarchy tags them "terminal") and VS Code-family editors ignore a
-    /// synthetic Ctrl+V, so they get Shift+Insert.
-    pub paste_with_shift_insert: bool,
-}
+use super::{Key, Window};
 
 impl Window {
     fn from_json(w: &Value) -> Option<Window> {
@@ -80,18 +69,6 @@ pub async fn shares_process(window: &Window) -> bool {
     })
 }
 
-/// A coding agent's window by its title: Claude Code starts it with its status glyph
-/// ("✳ Claude Code", "◐ Fixing the build"); others put their name in it.
-pub fn agent_title(title: &str) -> bool {
-    let first = title.trim_start().chars().next().unwrap_or(' ');
-    let glyph = "✳✻✽✶✢◐◓◑◒".contains(first) || ('\u{2800}'..='\u{28ff}').contains(&first);
-    let lower = title.to_lowercase();
-    glyph
-        || ["claude", "codex", "aider", "opencode", "gemini", "crush"]
-            .iter()
-            .any(|a| lower.split(|c: char| !c.is_alphanumeric()).any(|w| w == *a))
-}
-
 pub async fn focus(address: &str) -> Result<()> {
     let out = Command::new("hyprctl")
         // Hyprland's Lua config takes dispatchers as Lua.
@@ -143,9 +120,22 @@ pub async fn paste(text: &str, submit: bool) -> Result<()> {
     Ok(())
 }
 
+/// Presses `key` in the focused window.
+pub async fn press(key: Key) -> Result<()> {
+    match key {
+        Key::Escape => wtype(&["-k", "Escape"]).await,
+        Key::Return => wtype(&["-k", "Return"]).await,
+    }
+}
+
+/// Types `text` into the focused window.
+pub async fn type_text(text: &str) -> Result<()> {
+    wtype(&[text]).await
+}
+
 /// Presses keys in the focused window (wtype arguments, e.g. `["-k", "Escape"]`), or
 /// types text with `["text"]`.
-pub async fn wtype(args: &[&str]) -> Result<()> {
+async fn wtype(args: &[&str]) -> Result<()> {
     let status = Command::new("wtype")
         .args(args)
         .status()
@@ -197,20 +187,4 @@ pub fn notify(title: &str, body: &str) {
             .status()
             .await;
     });
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn agent_titles() {
-        assert!(agent_title("✳ Claude Code"));
-        assert!(agent_title("◐ Recording and accuracy"));
-        assert!(agent_title("⠂ Fixing the build"));
-        assert!(agent_title("codex - ~/Projects/app"));
-        assert!(!agent_title("~/Projects/parley"));
-        assert!(!agent_title("Inbox - Zen Browser"));
-        assert!(!agent_title("Claudette's notes"));
-    }
 }
