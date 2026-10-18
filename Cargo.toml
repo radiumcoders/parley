@@ -1,0 +1,16 @@
+[package]
+name = "parley"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["derive", "env"] }
+gradium = { version = "0.1.16", default-features = false, features = ["rustls"] }
+gtk4 = { version = "0.11", features = ["v4_12"] }
+gtk4-layer-shell = "0.8"
+regex = "1.13.1"
+reqwest = { version = "0.13", default-features = false, features = ["json", "rustls"] }
+rustls = "0.23"
+serde_json = { version = "1.0.154", features = ["preserve_order"] }
+tokio = { version = "1.53.3", features = ["full"] }
