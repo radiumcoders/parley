@@ -1,0 +1,24 @@
+{
+  "_note": "Real outputs: `parley replay` (Gradium STT + Claude Haiku cleanup) on the Gradium TTS clips; the @path cleanup via scripts/clean_with_files.py with the files listed.",
+  "before": {
+    "heard": "So can you add rate limiting to the login endpoint? Like five requests a minute. Wait, no, actually make that 10 and put it in the auth file.",
+    "files": [
+      "src/auth.ts",
+      "src/routes/login.ts",
+      "src/middleware/",
+      "tests/auth.test.ts",
+      "README.md"
+    ],
+    "cleaned": "Can you add rate limiting to the login endpoint? Like 10 requests a minute, and put it in @src/auth.ts."
+  },
+  "french": {
+    "said": "Euh, est-ce que tu peux ajouter des tests pour la page de connexion ? Surtout les cas d'erreur.",
+    "heard": "Can you add tests for the login page? Especially regarding error cases.",
+    "cleaned": "Can you add tests for the login page? Especially regarding error cases."
+  },
+  "reply": {
+    "heard": "yes, add the test. And tell me out loud when it's done.",
+    "cleaned": "Yes, add the test. And tell me out loud when it's done.",
+    "voiceNote": " (Your reply will be read aloud to me by text-to-speech: answer in a few short spoken sentences, without code blocks, lists, tables or file paths.)"
+  }
+}

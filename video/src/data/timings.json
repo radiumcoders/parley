@@ -1,0 +1,4103 @@
+{
+ "n_problem1": {
+  "hash": "fa14563f4ef20da80191e87b8802fd559b7bee29",
+  "duration": 2.24,
+  "words": [
+   {
+    "text": "You think faster than you type.",
+    "start": 0.0,
+    "end": 1.2768
+   }
+  ],
+  "heard": [
+   {
+    "text": "you",
+    "start": 0.0,
+    "end": 0.08
+   },
+   {
+    "text": "think",
+    "start": 0.08,
+    "end": 0.32
+   },
+   {
+    "text": "faster",
+    "start": 0.32,
+    "end": 0.72
+   },
+   {
+    "text": "than",
+    "start": 0.72,
+    "end": 0.96
+   },
+   {
+    "text": "you",
+    "start": 0.96,
+    "end": 1.12
+   },
+   {
+    "text": "type?",
+    "start": 1.12,
+    "end": 1.36
+   }
+  ],
+  "script": [
+   {
+    "text": "You",
+    "start": 0.0
+   },
+   {
+    "text": "think",
+    "start": 0.08
+   },
+   {
+    "text": "faster",
+    "start": 0.32
+   },
+   {
+    "text": "than",
+    "start": 0.72
+   },
+   {
+    "text": "you",
+    "start": 0.96
+   },
+   {
+    "text": "type.",
+    "start": 1.12
+   }
+  ],
+  "aligned": "fa14563f4ef20da80191e87b8802fd559b7bee29",
+  "timed": [
+   {
+    "text": "You",
+    "start": 0.0
+   },
+   {
+    "text": "think",
+    "start": 0.08
+   },
+   {
+    "text": "faster",
+    "start": 0.32
+   },
+   {
+    "text": "than",
+    "start": 0.72
+   },
+   {
+    "text": "you",
+    "start": 0.96
+   },
+   {
+    "text": "type.",
+    "start": 1.12
+   }
+  ]
+ },
+ "n_problem2": {
+  "hash": "65006e5c7e0c7bf613d09b77729e4c400466ecfd",
+  "duration": 8.8,
+  "words": [
+   {
+    "text": "So you try dictation. And it writes down exactly",
+    "start": 0.0,
+    "end": 2.8
+   },
+   {
+    "text": "what",
+    "start": 2.8,
+    "end": 2.96
+   },
+   {
+    "text": "you",
+    "start": 2.96,
+    "end": 3.12
+   },
+   {
+    "text": "said.",
+    "start": 3.12,
+    "end": 4.32
+   },
+   {
+    "text": "Every",
+    "start": 4.32,
+    "end": 4.56
+   },
+   {
+    "text": "um.",
+    "start": 4.56,
+    "end": 5.52
+   },
+   {
+    "text": "Every",
+    "start": 5.52,
+    "end": 5.76
+   },
+   {
+    "text": "false",
+    "start": 5.76,
+    "end": 6.08
+   },
+   {
+    "text": "start.",
+    "start": 6.08,
+    "end": 7.12
+   },
+   {
+    "text": "Every",
+    "start": 7.12,
+    "end": 7.36
+   },
+   {
+    "text": "wait,",
+    "start": 7.36,
+    "end": 7.92
+   },
+   {
+    "text": "no.",
+    "start": 7.92,
+    "end": 8.4
+   }
+  ],
+  "heard": [
+   {
+    "text": "so",
+    "start": 0.0,
+    "end": 0.16
+   },
+   {
+    "text": "you",
+    "start": 0.16,
+    "end": 0.32
+   },
+   {
+    "text": "try",
+    "start": 0.32,
+    "end": 0.56
+   },
+   {
+    "text": "dictation",
+    "start": 0.56,
+    "end": 1.12
+   },
+   {
+    "text": "and",
+    "start": 1.12,
+    "end": 1.68
+   },
+   {
+    "text": "it",
+    "start": 1.68,
+    "end": 1.84
+   },
+   {
+    "text": "writes",
+    "start": 1.84,
+    "end": 2.08
+   },
+   {
+    "text": "down",
+    "start": 2.08,
+    "end": 2.32
+   },
+   {
+    "text": "exactly",
+    "start": 2.32,
+    "end": 2.72
+   },
+   {
+    "text": "what you",
+    "start": 2.72,
+    "end": 2.96
+   },
+   {
+    "text": "said",
+    "start": 2.96,
+    "end": 3.36
+   },
+   {
+    "text": "every",
+    "start": 3.36,
+    "end": 4.48
+   },
+   {
+    "text": "um",
+    "start": 4.48,
+    "end": 4.8
+   },
+   {
+    "text": "every",
+    "start": 4.8,
+    "end": 5.68
+   },
+   {
+    "text": "false",
+    "start": 5.68,
+    "end": 6.0
+   },
+   {
+    "text": "start",
+    "start": 6.0,
+    "end": 6.4
+   },
+   {
+    "text": "every",
+    "start": 6.4,
+    "end": 7.28
+   },
+   {
+    "text": "wait",
+    "start": 7.28,
+    "end": 7.6
+   },
+   {
+    "text": "no",
+    "start": 7.6,
+    "end": 8.0
+   }
+  ],
+  "script": [
+   {
+    "text": "So",
+    "start": 0.0
+   },
+   {
+    "text": "you",
+    "start": 0.16
+   },
+   {
+    "text": "try",
+    "start": 0.32
+   },
+   {
+    "text": "dictation.",
+    "start": 0.56
+   },
+   {
+    "text": "And",
+    "start": 1.12
+   },
+   {
+    "text": "it",
+    "start": 1.68
+   },
+   {
+    "text": "writes",
+    "start": 1.84
+   },
+   {
+    "text": "down",
+    "start": 2.08
+   },
+   {
+    "text": "exactly",
+    "start": 2.32
+   },
+   {
+    "text": "what",
+    "start": 2.533
+   },
+   {
+    "text": "you",
+    "start": 2.747
+   },
+   {
+    "text": "said.",
+    "start": 2.96
+   },
+   {
+    "text": "Every",
+    "start": 3.36
+   },
+   {
+    "text": "um.",
+    "start": 4.48
+   },
+   {
+    "text": "Every",
+    "start": 4.8
+   },
+   {
+    "text": "false",
+    "start": 5.68
+   },
+   {
+    "text": "start.",
+    "start": 6.0
+   },
+   {
+    "text": "Every",
+    "start": 6.4
+   },
+   {
+    "text": "wait,",
+    "start": 7.28
+   },
+   {
+    "text": "no.",
+    "start": 7.6
+   }
+  ],
+  "aligned": "65006e5c7e0c7bf613d09b77729e4c400466ecfd",
+  "timed": [
+   {
+    "text": "So",
+    "start": 0.0
+   },
+   {
+    "text": "you",
+    "start": 0.16
+   },
+   {
+    "text": "try",
+    "start": 0.32
+   },
+   {
+    "text": "dictation.",
+    "start": 0.56
+   },
+   {
+    "text": "And",
+    "start": 1.12
+   },
+   {
+    "text": "it",
+    "start": 1.68
+   },
+   {
+    "text": "writes",
+    "start": 1.84
+   },
+   {
+    "text": "down",
+    "start": 2.08
+   },
+   {
+    "text": "exactly",
+    "start": 2.32
+   },
+   {
+    "text": "what",
+    "start": 2.8
+   },
+   {
+    "text": "you",
+    "start": 2.96
+   },
+   {
+    "text": "said.",
+    "start": 3.12
+   },
+   {
+    "text": "Every",
+    "start": 4.32
+   },
+   {
+    "text": "um.",
+    "start": 4.56
+   },
+   {
+    "text": "Every",
+    "start": 5.52
+   },
+   {
+    "text": "false",
+    "start": 5.76
+   },
+   {
+    "text": "start.",
+    "start": 6.08
+   },
+   {
+    "text": "Every",
+    "start": 7.12
+   },
+   {
+    "text": "wait,",
+    "start": 7.36
+   },
+   {
+    "text": "no.",
+    "start": 7.92
+   }
+  ]
+ },
+ "n_problem3": {
+  "hash": "94827d6f38cb085b45dc09568363bf6402f96041",
+  "duration": 3.6,
+  "words": [
+   {
+    "text": "And you spend longer fixing the prompt than it took",
+    "start": 0.0,
+    "end": 2.4
+   },
+   {
+    "text": "to",
+    "start": 2.4,
+    "end": 2.56
+   },
+   {
+    "text": "say",
+    "start": 2.56,
+    "end": 2.72
+   },
+   {
+    "text": "it.",
+    "start": 2.72,
+    "end": 3.2
+   }
+  ],
+  "heard": [
+   {
+    "text": "and",
+    "start": 0.0,
+    "end": 0.08
+   },
+   {
+    "text": "you",
+    "start": 0.08,
+    "end": 0.24
+   },
+   {
+    "text": "spend",
+    "start": 0.24,
+    "end": 0.48
+   },
+   {
+    "text": "longer",
+    "start": 0.48,
+    "end": 0.8
+   },
+   {
+    "text": "fixing the",
+    "start": 0.8,
+    "end": 1.2
+   },
+   {
+    "text": "prompt",
+    "start": 1.2,
+    "end": 1.76
+   },
+   {
+    "text": "than it",
+    "start": 1.76,
+    "end": 2.0
+   },
+   {
+    "text": "took",
+    "start": 2.0,
+    "end": 2.32
+   },
+   {
+    "text": "to",
+    "start": 2.32,
+    "end": 2.48
+   },
+   {
+    "text": "say",
+    "start": 2.48,
+    "end": 2.72
+   },
+   {
+    "text": "it?",
+    "start": 2.72,
+    "end": 2.88
+   }
+  ],
+  "script": [
+   {
+    "text": "And",
+    "start": 0.0
+   },
+   {
+    "text": "you",
+    "start": 0.08
+   },
+   {
+    "text": "spend",
+    "start": 0.24
+   },
+   {
+    "text": "longer",
+    "start": 0.48
+   },
+   {
+    "text": "fixing",
+    "start": 0.72
+   },
+   {
+    "text": "the",
+    "start": 0.96
+   },
+   {
+    "text": "prompt",
+    "start": 1.2
+   },
+   {
+    "text": "than",
+    "start": 1.467
+   },
+   {
+    "text": "it",
+    "start": 1.733
+   },
+   {
+    "text": "took",
+    "start": 2.0
+   },
+   {
+    "text": "to",
+    "start": 2.32
+   },
+   {
+    "text": "say",
+    "start": 2.48
+   },
+   {
+    "text": "it.",
+    "start": 2.72
+   }
+  ],
+  "aligned": "94827d6f38cb085b45dc09568363bf6402f96041",
+  "timed": [
+   {
+    "text": "And",
+    "start": 0.0
+   },
+   {
+    "text": "you",
+    "start": 0.08
+   },
+   {
+    "text": "spend",
+    "start": 0.24
+   },
+   {
+    "text": "longer",
+    "start": 0.48
+   },
+   {
+    "text": "fixing",
+    "start": 0.72
+   },
+   {
+    "text": "the",
+    "start": 0.96
+   },
+   {
+    "text": "prompt",
+    "start": 1.2
+   },
+   {
+    "text": "than",
+    "start": 1.467
+   },
+   {
+    "text": "it",
+    "start": 1.733
+   },
+   {
+    "text": "took",
+    "start": 2.0
+   },
+   {
+    "text": "to",
+    "start": 2.4
+   },
+   {
+    "text": "say",
+    "start": 2.56
+   },
+   {
+    "text": "it.",
+    "start": 2.72
+   }
+  ]
+ },
+ "n_intro": {
+  "hash": "5679306f8e155570a5527b262a5431a6d814c3a9",
+  "duration": 4.96,
+  "words": [
+   {
+    "text": "Meet parley. Push to talk for Claude",
+    "start": 0.0,
+    "end": 2.32
+   },
+   {
+    "text": "Code,",
+    "start": 2.32,
+    "end": 3.12
+   },
+   {
+    "text": "with",
+    "start": 3.12,
+    "end": 3.28
+   },
+   {
+    "text": "speech",
+    "start": 3.28,
+    "end": 3.6
+   },
+   {
+    "text": "by",
+    "start": 3.6,
+    "end": 3.84
+   },
+   {
+    "text": "Gradium.",
+    "start": 3.84,
+    "end": 4.56
+   }
+  ],
+  "heard": [
+   {
+    "text": "Meat",
+    "start": 0.0,
+    "end": 0.16
+   },
+   {
+    "text": "Parley.",
+    "start": 0.16,
+    "end": 0.56
+   },
+   {
+    "text": "Push to",
+    "start": 0.56,
+    "end": 1.44
+   },
+   {
+    "text": "talk for",
+    "start": 1.44,
+    "end": 1.84
+   },
+   {
+    "text": "Claude",
+    "start": 1.84,
+    "end": 2.24
+   },
+   {
+    "text": "Code",
+    "start": 2.24,
+    "end": 2.64
+   },
+   {
+    "text": "with",
+    "start": 2.64,
+    "end": 3.2
+   },
+   {
+    "text": "Speech by",
+    "start": 3.2,
+    "end": 3.6
+   },
+   {
+    "text": "Gradium.",
+    "start": 3.6,
+    "end": 4.24
+   }
+  ],
+  "script": [
+   {
+    "text": "Meet",
+    "start": 0.08
+   },
+   {
+    "text": "parley.",
+    "start": 0.16
+   },
+   {
+    "text": "Push",
+    "start": 0.496
+   },
+   {
+    "text": "to",
+    "start": 0.832
+   },
+   {
+    "text": "talk",
+    "start": 1.168
+   },
+   {
+    "text": "for",
+    "start": 1.504
+   },
+   {
+    "text": "Claude",
+    "start": 1.84
+   },
+   {
+    "text": "Code,",
+    "start": 2.24
+   },
+   {
+    "text": "with",
+    "start": 2.64
+   },
+   {
+    "text": "speech",
+    "start": 2.96
+   },
+   {
+    "text": "by",
+    "start": 3.28
+   },
+   {
+    "text": "Gradium.",
+    "start": 3.6
+   }
+  ],
+  "aligned": "5679306f8e155570a5527b262a5431a6d814c3a9",
+  "timed": [
+   {
+    "text": "Meet",
+    "start": 0.08
+   },
+   {
+    "text": "parley.",
+    "start": 0.16
+   },
+   {
+    "text": "Push",
+    "start": 0.496
+   },
+   {
+    "text": "to",
+    "start": 0.832
+   },
+   {
+    "text": "talk",
+    "start": 1.168
+   },
+   {
+    "text": "for",
+    "start": 1.504
+   },
+   {
+    "text": "Claude",
+    "start": 1.84
+   },
+   {
+    "text": "Code,",
+    "start": 2.32
+   },
+   {
+    "text": "with",
+    "start": 3.12
+   },
+   {
+    "text": "speech",
+    "start": 3.28
+   },
+   {
+    "text": "by",
+    "start": 3.6
+   },
+   {
+    "text": "Gradium.",
+    "start": 3.84
+   }
+  ]
+ },
+ "n_how": {
+  "hash": "2b0e49d4cc40d604c2c69a4fef01e0ed5338408f",
+  "duration": 3.52,
+  "words": [
+   {
+    "text": "Hold a key. Talk. Let go.",
+    "start": 0.0,
+    "end": 3.12
+   }
+  ],
+  "heard": [
+   {
+    "text": "Hold a",
+    "start": 0.0,
+    "end": 0.16
+   },
+   {
+    "text": "key.",
+    "start": 0.16,
+    "end": 0.48
+   },
+   {
+    "text": "Talk.",
+    "start": 0.48,
+    "end": 1.76
+   },
+   {
+    "text": "Let",
+    "start": 1.76,
+    "end": 2.56
+   },
+   {
+    "text": "go.",
+    "start": 2.56,
+    "end": 2.72
+   }
+  ],
+  "script": [
+   {
+    "text": "Hold",
+    "start": 0.053
+   },
+   {
+    "text": "a",
+    "start": 0.107
+   },
+   {
+    "text": "key.",
+    "start": 0.16
+   },
+   {
+    "text": "Talk.",
+    "start": 0.48
+   },
+   {
+    "text": "Let",
+    "start": 1.76
+   },
+   {
+    "text": "go.",
+    "start": 2.56
+   }
+  ],
+  "aligned": "2b0e49d4cc40d604c2c69a4fef01e0ed5338408f",
+  "timed": [
+   {
+    "text": "Hold",
+    "start": 0.053
+   },
+   {
+    "text": "a",
+    "start": 0.107
+   },
+   {
+    "text": "key.",
+    "start": 0.16
+   },
+   {
+    "text": "Talk.",
+    "start": 0.48
+   },
+   {
+    "text": "Let",
+    "start": 1.76
+   },
+   {
+    "text": "go.",
+    "start": 2.56
+   }
+  ]
+ },
+ "d_before": {
+  "hash": "0d911d4c58200c7b657ad35d658a1d6908064daa",
+  "duration": 14.4,
+  "words": [
+   {
+    "text": "Um, so, can you, uh add rate",
+    "start": 0.0,
+    "end": 3.04
+   },
+   {
+    "text": "limiting",
+    "start": 3.04,
+    "end": 3.52
+   },
+   {
+    "text": "to",
+    "start": 3.52,
+    "end": 3.68
+   },
+   {
+    "text": "the,",
+    "start": 3.68,
+    "end": 4.0
+   },
+   {
+    "text": "the",
+    "start": 4.0,
+    "end": 4.32
+   },
+   {
+    "text": "login",
+    "start": 4.32,
+    "end": 4.72
+   },
+   {
+    "text": "endpoint?",
+    "start": 4.72,
+    "end": 5.76
+   },
+   {
+    "text": "Like,",
+    "start": 5.76,
+    "end": 6.24
+   },
+   {
+    "text": "five",
+    "start": 6.24,
+    "end": 6.56
+   },
+   {
+    "text": "requests",
+    "start": 6.56,
+    "end": 6.96
+   },
+   {
+    "text": "a",
+    "start": 6.96,
+    "end": 7.04
+   },
+   {
+    "text": "minute.",
+    "start": 7.04,
+    "end": 8.96
+   },
+   {
+    "text": "Wait,",
+    "start": 8.96,
+    "end": 9.44
+   },
+   {
+    "text": "no,",
+    "start": 9.44,
+    "end": 9.84
+   },
+   {
+    "text": "actually,",
+    "start": 9.84,
+    "end": 10.4
+   },
+   {
+    "text": "make",
+    "start": 10.4,
+    "end": 10.64
+   },
+   {
+    "text": "that",
+    "start": 10.64,
+    "end": 10.88
+   },
+   {
+    "text": "ten.",
+    "start": 10.88,
+    "end": 12.08
+   },
+   {
+    "text": "And,",
+    "start": 12.08,
+    "end": 12.32
+   },
+   {
+    "text": "uh,",
+    "start": 12.32,
+    "end": 12.72
+   },
+   {
+    "text": "put",
+    "start": 12.72,
+    "end": 12.88
+   },
+   {
+    "text": "it",
+    "start": 12.88,
+    "end": 12.96
+   },
+   {
+    "text": "in",
+    "start": 12.96,
+    "end": 13.04
+   },
+   {
+    "text": "the",
+    "start": 13.04,
+    "end": 13.12
+   },
+   {
+    "text": "auth",
+    "start": 13.12,
+    "end": 13.44
+   },
+   {
+    "text": "file.",
+    "start": 13.44,
+    "end": 14.0
+   }
+  ],
+  "heard": [
+   {
+    "text": "So",
+    "start": 0.0,
+    "end": 0.72
+   },
+   {
+    "text": "can",
+    "start": 0.72,
+    "end": 0.96
+   },
+   {
+    "text": "you",
+    "start": 0.96,
+    "end": 1.2
+   },
+   {
+    "text": "add",
+    "start": 1.2,
+    "end": 2.56
+   },
+   {
+    "text": "rate",
+    "start": 2.56,
+    "end": 2.96
+   },
+   {
+    "text": "limiting",
+    "start": 2.96,
+    "end": 3.44
+   },
+   {
+    "text": "to",
+    "start": 3.44,
+    "end": 3.68
+   },
+   {
+    "text": "the",
+    "start": 3.68,
+    "end": 4.08
+   },
+   {
+    "text": "login",
+    "start": 4.08,
+    "end": 4.64
+   },
+   {
+    "text": "endpoint,",
+    "start": 4.64,
+    "end": 5.12
+   },
+   {
+    "text": "like",
+    "start": 5.12,
+    "end": 5.92
+   },
+   {
+    "text": "five",
+    "start": 5.92,
+    "end": 6.48
+   },
+   {
+    "text": "requests a",
+    "start": 6.48,
+    "end": 6.88
+   },
+   {
+    "text": "minute?",
+    "start": 6.88,
+    "end": 7.28
+   },
+   {
+    "text": "Wait,",
+    "start": 7.28,
+    "end": 9.12
+   },
+   {
+    "text": "no,",
+    "start": 9.12,
+    "end": 9.52
+   },
+   {
+    "text": "actually",
+    "start": 9.52,
+    "end": 10.16
+   },
+   {
+    "text": "make",
+    "start": 10.16,
+    "end": 10.56
+   },
+   {
+    "text": "that",
+    "start": 10.56,
+    "end": 10.8
+   },
+   {
+    "text": "10 and",
+    "start": 10.8,
+    "end": 12.08
+   },
+   {
+    "text": "put",
+    "start": 12.08,
+    "end": 12.8
+   },
+   {
+    "text": "it in the",
+    "start": 12.8,
+    "end": 12.96
+   },
+   {
+    "text": "auth",
+    "start": 12.96,
+    "end": 13.28
+   },
+   {
+    "text": "file.",
+    "start": 13.28,
+    "end": 13.68
+   }
+  ],
+  "script": [
+   {
+    "text": "Um,",
+    "start": 0.0
+   },
+   {
+    "text": "so,",
+    "start": 0.0
+   },
+   {
+    "text": "can",
+    "start": 0.72
+   },
+   {
+    "text": "you,",
+    "start": 0.96
+   },
+   {
+    "text": "uh",
+    "start": 1.08
+   },
+   {
+    "text": "add",
+    "start": 1.2
+   },
+   {
+    "text": "rate",
+    "start": 2.56
+   },
+   {
+    "text": "limiting",
+    "start": 2.96
+   },
+   {
+    "text": "to",
+    "start": 3.44
+   },
+   {
+    "text": "the,",
+    "start": 3.68
+   },
+   {
+    "text": "the",
+    "start": 3.88
+   },
+   {
+    "text": "login",
+    "start": 4.08
+   },
+   {
+    "text": "endpoint?",
+    "start": 4.64
+   },
+   {
+    "text": "Like,",
+    "start": 5.12
+   },
+   {
+    "text": "five",
+    "start": 5.92
+   },
+   {
+    "text": "requests",
+    "start": 6.24
+   },
+   {
+    "text": "a",
+    "start": 6.56
+   },
+   {
+    "text": "minute.",
+    "start": 6.88
+   },
+   {
+    "text": "Wait,",
+    "start": 7.28
+   },
+   {
+    "text": "no,",
+    "start": 9.12
+   },
+   {
+    "text": "actually,",
+    "start": 9.52
+   },
+   {
+    "text": "make",
+    "start": 10.16
+   },
+   {
+    "text": "that",
+    "start": 10.56
+   },
+   {
+    "text": "ten.",
+    "start": 10.94
+   },
+   {
+    "text": "And,",
+    "start": 11.32
+   },
+   {
+    "text": "uh,",
+    "start": 11.7
+   },
+   {
+    "text": "put",
+    "start": 12.08
+   },
+   {
+    "text": "it",
+    "start": 12.3
+   },
+   {
+    "text": "in",
+    "start": 12.52
+   },
+   {
+    "text": "the",
+    "start": 12.74
+   },
+   {
+    "text": "auth",
+    "start": 12.96
+   },
+   {
+    "text": "file.",
+    "start": 13.28
+   }
+  ],
+  "aligned": "0d911d4c58200c7b657ad35d658a1d6908064daa",
+  "timed": [
+   {
+    "text": "Um,",
+    "start": 0.0
+   },
+   {
+    "text": "so,",
+    "start": 0.0
+   },
+   {
+    "text": "can",
+    "start": 0.72
+   },
+   {
+    "text": "you,",
+    "start": 0.96
+   },
+   {
+    "text": "uh",
+    "start": 1.08
+   },
+   {
+    "text": "add",
+    "start": 1.2
+   },
+   {
+    "text": "rate",
+    "start": 2.56
+   },
+   {
+    "text": "limiting",
+    "start": 3.04
+   },
+   {
+    "text": "to",
+    "start": 3.52
+   },
+   {
+    "text": "the,",
+    "start": 3.68
+   },
+   {
+    "text": "the",
+    "start": 4.0
+   },
+   {
+    "text": "login",
+    "start": 4.32
+   },
+   {
+    "text": "endpoint?",
+    "start": 4.72
+   },
+   {
+    "text": "Like,",
+    "start": 5.76
+   },
+   {
+    "text": "five",
+    "start": 6.24
+   },
+   {
+    "text": "requests",
+    "start": 6.56
+   },
+   {
+    "text": "a",
+    "start": 6.96
+   },
+   {
+    "text": "minute.",
+    "start": 7.04
+   },
+   {
+    "text": "Wait,",
+    "start": 8.96
+   },
+   {
+    "text": "no,",
+    "start": 9.44
+   },
+   {
+    "text": "actually,",
+    "start": 9.84
+   },
+   {
+    "text": "make",
+    "start": 10.4
+   },
+   {
+    "text": "that",
+    "start": 10.64
+   },
+   {
+    "text": "ten.",
+    "start": 10.88
+   },
+   {
+    "text": "And,",
+    "start": 12.08
+   },
+   {
+    "text": "uh,",
+    "start": 12.32
+   },
+   {
+    "text": "put",
+    "start": 12.72
+   },
+   {
+    "text": "it",
+    "start": 12.88
+   },
+   {
+    "text": "in",
+    "start": 12.96
+   },
+   {
+    "text": "the",
+    "start": 13.04
+   },
+   {
+    "text": "auth",
+    "start": 13.12
+   },
+   {
+    "text": "file.",
+    "start": 13.44
+   }
+  ]
+ },
+ "n_gets": {
+  "hash": "bc8889d830264811d56c764d9239fec0ddfd46ca",
+  "duration": 3.28,
+  "words": [
+   {
+    "text": "That's what you said. Here's what Claude",
+    "start": 0.0,
+    "end": 2.32
+   },
+   {
+    "text": "gets.",
+    "start": 2.32,
+    "end": 2.88
+   }
+  ],
+  "heard": [
+   {
+    "text": "That's what you",
+    "start": 0.0,
+    "end": 0.24
+   },
+   {
+    "text": "said.",
+    "start": 0.24,
+    "end": 0.8
+   },
+   {
+    "text": "Here's what",
+    "start": 0.8,
+    "end": 1.6
+   },
+   {
+    "text": "Claude",
+    "start": 1.6,
+    "end": 2.16
+   },
+   {
+    "text": "gets.",
+    "start": 2.16,
+    "end": 2.64
+   }
+  ],
+  "script": [
+   {
+    "text": "That's",
+    "start": 0.06
+   },
+   {
+    "text": "what",
+    "start": 0.12
+   },
+   {
+    "text": "you",
+    "start": 0.18
+   },
+   {
+    "text": "said.",
+    "start": 0.24
+   },
+   {
+    "text": "Here's",
+    "start": 0.693
+   },
+   {
+    "text": "what",
+    "start": 1.147
+   },
+   {
+    "text": "Claude",
+    "start": 1.6
+   },
+   {
+    "text": "gets.",
+    "start": 2.16
+   }
+  ],
+  "aligned": "bc8889d830264811d56c764d9239fec0ddfd46ca",
+  "timed": [
+   {
+    "text": "That's",
+    "start": 0.06
+   },
+   {
+    "text": "what",
+    "start": 0.12
+   },
+   {
+    "text": "you",
+    "start": 0.18
+   },
+   {
+    "text": "said.",
+    "start": 0.24
+   },
+   {
+    "text": "Here's",
+    "start": 0.693
+   },
+   {
+    "text": "what",
+    "start": 1.147
+   },
+   {
+    "text": "Claude",
+    "start": 1.6
+   },
+   {
+    "text": "gets.",
+    "start": 2.32
+   }
+  ]
+ },
+ "d_after": {
+  "hash": "2192ec703f5aa96df72167258e1744f4448e3d25",
+  "duration": 6.4,
+  "words": [
+   {
+    "text": "Can you add rate limiting to the login endpoint?",
+    "start": 0.0,
+    "end": 2.88
+   },
+   {
+    "text": "Like",
+    "start": 2.88,
+    "end": 3.12
+   },
+   {
+    "text": "ten",
+    "start": 3.12,
+    "end": 3.36
+   },
+   {
+    "text": "requests",
+    "start": 3.36,
+    "end": 3.84
+   },
+   {
+    "text": "a",
+    "start": 3.84,
+    "end": 3.92
+   },
+   {
+    "text": "minute,",
+    "start": 3.92,
+    "end": 4.48
+   },
+   {
+    "text": "and",
+    "start": 4.48,
+    "end": 4.56
+   },
+   {
+    "text": "put",
+    "start": 4.56,
+    "end": 4.72
+   },
+   {
+    "text": "it",
+    "start": 4.72,
+    "end": 4.8
+   },
+   {
+    "text": "in",
+    "start": 4.8,
+    "end": 4.88
+   },
+   {
+    "text": "auth",
+    "start": 4.88,
+    "end": 5.2
+   },
+   {
+    "text": "dot",
+    "start": 5.2,
+    "end": 5.44
+   },
+   {
+    "text": "ts.",
+    "start": 5.44,
+    "end": 6.0
+   }
+  ],
+  "heard": [
+   {
+    "text": "can",
+    "start": 0.0,
+    "end": 0.16
+   },
+   {
+    "text": "you",
+    "start": 0.16,
+    "end": 0.32
+   },
+   {
+    "text": "add",
+    "start": 0.32,
+    "end": 0.56
+   },
+   {
+    "text": "rate",
+    "start": 0.56,
+    "end": 0.8
+   },
+   {
+    "text": "limiting to the",
+    "start": 0.8,
+    "end": 1.2
+   },
+   {
+    "text": "login",
+    "start": 1.2,
+    "end": 1.76
+   },
+   {
+    "text": "endpoint?",
+    "start": 1.76,
+    "end": 2.24
+   },
+   {
+    "text": "Like",
+    "start": 2.24,
+    "end": 3.04
+   },
+   {
+    "text": "10",
+    "start": 3.04,
+    "end": 3.36
+   },
+   {
+    "text": "requests a",
+    "start": 3.36,
+    "end": 3.76
+   },
+   {
+    "text": "minute",
+    "start": 3.76,
+    "end": 4.16
+   },
+   {
+    "text": "and",
+    "start": 4.16,
+    "end": 4.48
+   },
+   {
+    "text": "put",
+    "start": 4.48,
+    "end": 4.64
+   },
+   {
+    "text": "it in",
+    "start": 4.64,
+    "end": 4.8
+   },
+   {
+    "text": "auth.ts.",
+    "start": 4.8,
+    "end": 5.84
+   }
+  ],
+  "script": [
+   {
+    "text": "Can",
+    "start": 0.0
+   },
+   {
+    "text": "you",
+    "start": 0.16
+   },
+   {
+    "text": "add",
+    "start": 0.32
+   },
+   {
+    "text": "rate",
+    "start": 0.56
+   },
+   {
+    "text": "limiting",
+    "start": 0.72
+   },
+   {
+    "text": "to",
+    "start": 0.88
+   },
+   {
+    "text": "the",
+    "start": 1.04
+   },
+   {
+    "text": "login",
+    "start": 1.2
+   },
+   {
+    "text": "endpoint?",
+    "start": 1.76
+   },
+   {
+    "text": "Like",
+    "start": 2.24
+   },
+   {
+    "text": "ten",
+    "start": 2.62
+   },
+   {
+    "text": "requests",
+    "start": 3.0
+   },
+   {
+    "text": "a",
+    "start": 3.38
+   },
+   {
+    "text": "minute,",
+    "start": 3.76
+   },
+   {
+    "text": "and",
+    "start": 4.16
+   },
+   {
+    "text": "put",
+    "start": 4.48
+   },
+   {
+    "text": "it",
+    "start": 4.75
+   },
+   {
+    "text": "in",
+    "start": 5.02
+   },
+   {
+    "text": "auth",
+    "start": 5.29
+   },
+   {
+    "text": "dot",
+    "start": 5.56
+   },
+   {
+    "text": "ts.",
+    "start": 5.83
+   }
+  ],
+  "aligned": "2192ec703f5aa96df72167258e1744f4448e3d25",
+  "timed": [
+   {
+    "text": "Can",
+    "start": 0.0
+   },
+   {
+    "text": "you",
+    "start": 0.16
+   },
+   {
+    "text": "add",
+    "start": 0.32
+   },
+   {
+    "text": "rate",
+    "start": 0.56
+   },
+   {
+    "text": "limiting",
+    "start": 0.72
+   },
+   {
+    "text": "to",
+    "start": 0.88
+   },
+   {
+    "text": "the",
+    "start": 1.04
+   },
+   {
+    "text": "login",
+    "start": 1.2
+   },
+   {
+    "text": "endpoint?",
+    "start": 1.76
+   },
+   {
+    "text": "Like",
+    "start": 2.88
+   },
+   {
+    "text": "ten",
+    "start": 3.12
+   },
+   {
+    "text": "requests",
+    "start": 3.36
+   },
+   {
+    "text": "a",
+    "start": 3.84
+   },
+   {
+    "text": "minute,",
+    "start": 3.92
+   },
+   {
+    "text": "and",
+    "start": 4.48
+   },
+   {
+    "text": "put",
+    "start": 4.56
+   },
+   {
+    "text": "it",
+    "start": 4.72
+   },
+   {
+    "text": "in",
+    "start": 4.8
+   },
+   {
+    "text": "auth",
+    "start": 4.88
+   },
+   {
+    "text": "dot",
+    "start": 5.2
+   },
+   {
+    "text": "ts.",
+    "start": 5.44
+   }
+  ]
+ },
+ "n_compare": {
+  "hash": "174e6bbc14c682d64bee1297eee9a7024286e649",
+  "duration": 5.36,
+  "words": [
+   {
+    "text": "The fillers are gone. Your correction is applied.",
+    "start": 0.0,
+    "end": 3.28
+   },
+   {
+    "text": "And",
+    "start": 3.28,
+    "end": 3.36
+   },
+   {
+    "text": "the",
+    "start": 3.36,
+    "end": 3.52
+   },
+   {
+    "text": "file",
+    "start": 3.52,
+    "end": 3.84
+   },
+   {
+    "text": "is",
+    "start": 3.84,
+    "end": 3.92
+   },
+   {
+    "text": "found",
+    "start": 3.92,
+    "end": 4.24
+   },
+   {
+    "text": "by",
+    "start": 4.24,
+    "end": 4.4
+   },
+   {
+    "text": "name.",
+    "start": 4.4,
+    "end": 4.96
+   }
+  ],
+  "heard": [
+   {
+    "text": "the",
+    "start": 0.0,
+    "end": 0.08
+   },
+   {
+    "text": "fillers",
+    "start": 0.08,
+    "end": 0.4
+   },
+   {
+    "text": "are",
+    "start": 0.4,
+    "end": 0.64
+   },
+   {
+    "text": "gone.",
+    "start": 0.64,
+    "end": 0.96
+   },
+   {
+    "text": "Your",
+    "start": 0.96,
+    "end": 1.44
+   },
+   {
+    "text": "correction is",
+    "start": 1.44,
+    "end": 1.92
+   },
+   {
+    "text": "applied",
+    "start": 1.92,
+    "end": 2.56
+   },
+   {
+    "text": "and",
+    "start": 2.56,
+    "end": 3.28
+   },
+   {
+    "text": "the",
+    "start": 3.28,
+    "end": 3.44
+   },
+   {
+    "text": "file",
+    "start": 3.44,
+    "end": 3.76
+   },
+   {
+    "text": "is",
+    "start": 3.76,
+    "end": 3.92
+   },
+   {
+    "text": "found",
+    "start": 3.92,
+    "end": 4.16
+   },
+   {
+    "text": "by",
+    "start": 4.16,
+    "end": 4.32
+   },
+   {
+    "text": "name.",
+    "start": 4.32,
+    "end": 4.72
+   }
+  ],
+  "script": [
+   {
+    "text": "The",
+    "start": 0.0
+   },
+   {
+    "text": "fillers",
+    "start": 0.08
+   },
+   {
+    "text": "are",
+    "start": 0.4
+   },
+   {
+    "text": "gone.",
+    "start": 0.64
+   },
+   {
+    "text": "Your",
+    "start": 0.96
+   },
+   {
+    "text": "correction",
+    "start": 1.28
+   },
+   {
+    "text": "is",
+    "start": 1.6
+   },
+   {
+    "text": "applied.",
+    "start": 1.92
+   },
+   {
+    "text": "And",
+    "start": 2.56
+   },
+   {
+    "text": "the",
+    "start": 3.28
+   },
+   {
+    "text": "file",
+    "start": 3.44
+   },
+   {
+    "text": "is",
+    "start": 3.76
+   },
+   {
+    "text": "found",
+    "start": 3.92
+   },
+   {
+    "text": "by",
+    "start": 4.16
+   },
+   {
+    "text": "name.",
+    "start": 4.32
+   }
+  ],
+  "aligned": "174e6bbc14c682d64bee1297eee9a7024286e649",
+  "timed": [
+   {
+    "text": "The",
+    "start": 0.0
+   },
+   {
+    "text": "fillers",
+    "start": 0.08
+   },
+   {
+    "text": "are",
+    "start": 0.4
+   },
+   {
+    "text": "gone.",
+    "start": 0.64
+   },
+   {
+    "text": "Your",
+    "start": 0.96
+   },
+   {
+    "text": "correction",
+    "start": 1.28
+   },
+   {
+    "text": "is",
+    "start": 1.6
+   },
+   {
+    "text": "applied.",
+    "start": 1.92
+   },
+   {
+    "text": "And",
+    "start": 3.28
+   },
+   {
+    "text": "the",
+    "start": 3.36
+   },
+   {
+    "text": "file",
+    "start": 3.52
+   },
+   {
+    "text": "is",
+    "start": 3.84
+   },
+   {
+    "text": "found",
+    "start": 3.92
+   },
+   {
+    "text": "by",
+    "start": 4.24
+   },
+   {
+    "text": "name.",
+    "start": 4.4
+   }
+  ]
+ },
+ "f_commands": {
+  "hash": "5e8c28fe482a92e21d079feea1f2ca987f04285c",
+  "duration": 6.08,
+  "words": [
+   {
+    "text": "Say stop, undo that, clear the chat, or compact,",
+    "start": 0.0,
+    "end": 3.92
+   },
+   {
+    "text": "and",
+    "start": 3.92,
+    "end": 4.0
+   },
+   {
+    "text": "parley",
+    "start": 4.0,
+    "end": 4.32
+   },
+   {
+    "text": "presses",
+    "start": 4.32,
+    "end": 4.72
+   },
+   {
+    "text": "the",
+    "start": 4.72,
+    "end": 4.8
+   },
+   {
+    "text": "keys",
+    "start": 4.8,
+    "end": 5.04
+   },
+   {
+    "text": "for",
+    "start": 5.04,
+    "end": 5.2
+   },
+   {
+    "text": "you.",
+    "start": 5.2,
+    "end": 5.68
+   }
+  ],
+  "heard": [
+   {
+    "text": "say",
+    "start": 0.0,
+    "end": 0.16
+   },
+   {
+    "text": "stop,",
+    "start": 0.16,
+    "end": 0.56
+   },
+   {
+    "text": "undo",
+    "start": 0.56,
+    "end": 1.2
+   },
+   {
+    "text": "that,",
+    "start": 1.2,
+    "end": 1.52
+   },
+   {
+    "text": "clear",
+    "start": 1.52,
+    "end": 1.84
+   },
+   {
+    "text": "the",
+    "start": 1.84,
+    "end": 2.0
+   },
+   {
+    "text": "chat,",
+    "start": 2.0,
+    "end": 2.32
+   },
+   {
+    "text": "or",
+    "start": 2.32,
+    "end": 2.8
+   },
+   {
+    "text": "compact,",
+    "start": 2.8,
+    "end": 3.44
+   },
+   {
+    "text": "and",
+    "start": 3.44,
+    "end": 3.92
+   },
+   {
+    "text": "Parley",
+    "start": 3.92,
+    "end": 4.24
+   },
+   {
+    "text": "presses the",
+    "start": 4.24,
+    "end": 4.64
+   },
+   {
+    "text": "keys for",
+    "start": 4.64,
+    "end": 5.04
+   },
+   {
+    "text": "you.",
+    "start": 5.04,
+    "end": 5.36
+   }
+  ],
+  "script": [
+   {
+    "text": "Say",
+    "start": 0.0
+   },
+   {
+    "text": "stop,",
+    "start": 0.16
+   },
+   {
+    "text": "undo",
+    "start": 0.56
+   },
+   {
+    "text": "that,",
+    "start": 1.2
+   },
+   {
+    "text": "clear",
+    "start": 1.52
+   },
+   {
+    "text": "the",
+    "start": 1.84
+   },
+   {
+    "text": "chat,",
+    "start": 2.0
+   },
+   {
+    "text": "or",
+    "start": 2.32
+   },
+   {
+    "text": "compact,",
+    "start": 2.8
+   },
+   {
+    "text": "and",
+    "start": 3.44
+   },
+   {
+    "text": "parley",
+    "start": 3.92
+   },
+   {
+    "text": "presses",
+    "start": 4.144
+   },
+   {
+    "text": "the",
+    "start": 4.368
+   },
+   {
+    "text": "keys",
+    "start": 4.592
+   },
+   {
+    "text": "for",
+    "start": 4.816
+   },
+   {
+    "text": "you.",
+    "start": 5.04
+   }
+  ],
+  "aligned": "5e8c28fe482a92e21d079feea1f2ca987f04285c",
+  "timed": [
+   {
+    "text": "Say",
+    "start": 0.0
+   },
+   {
+    "text": "stop,",
+    "start": 0.16
+   },
+   {
+    "text": "undo",
+    "start": 0.56
+   },
+   {
+    "text": "that,",
+    "start": 1.2
+   },
+   {
+    "text": "clear",
+    "start": 1.52
+   },
+   {
+    "text": "the",
+    "start": 1.84
+   },
+   {
+    "text": "chat,",
+    "start": 2.0
+   },
+   {
+    "text": "or",
+    "start": 2.32
+   },
+   {
+    "text": "compact,",
+    "start": 2.8
+   },
+   {
+    "text": "and",
+    "start": 3.92
+   },
+   {
+    "text": "parley",
+    "start": 4.0
+   },
+   {
+    "text": "presses",
+    "start": 4.32
+   },
+   {
+    "text": "the",
+    "start": 4.72
+   },
+   {
+    "text": "keys",
+    "start": 4.8
+   },
+   {
+    "text": "for",
+    "start": 5.04
+   },
+   {
+    "text": "you.",
+    "start": 5.2
+   }
+  ]
+ },
+ "f_lang": {
+  "hash": "09b5f8fc2966feacefe59d8640c393e494eeb6d7",
+  "duration": 5.68,
+  "words": [
+   {
+    "text": "Speak French, German, Spanish or Portuguese.",
+    "start": 0.0,
+    "end": 3.76
+   },
+   {
+    "text": "Claude",
+    "start": 3.76,
+    "end": 4.16
+   },
+   {
+    "text": "still",
+    "start": 4.16,
+    "end": 4.4
+   },
+   {
+    "text": "gets",
+    "start": 4.4,
+    "end": 4.64
+   },
+   {
+    "text": "English.",
+    "start": 4.64,
+    "end": 5.28
+   }
+  ],
+  "heard": [
+   {
+    "text": "Speak",
+    "start": 0.0,
+    "end": 0.32
+   },
+   {
+    "text": "French,",
+    "start": 0.32,
+    "end": 0.8
+   },
+   {
+    "text": "German,",
+    "start": 0.8,
+    "end": 1.36
+   },
+   {
+    "text": "Spanish, or",
+    "start": 1.36,
+    "end": 2.16
+   },
+   {
+    "text": "Portuguese.",
+    "start": 2.16,
+    "end": 3.04
+   },
+   {
+    "text": "Claude",
+    "start": 3.04,
+    "end": 4.08
+   },
+   {
+    "text": "still",
+    "start": 4.08,
+    "end": 4.32
+   },
+   {
+    "text": "gets",
+    "start": 4.32,
+    "end": 4.56
+   },
+   {
+    "text": "English.",
+    "start": 4.56,
+    "end": 5.04
+   }
+  ],
+  "script": [
+   {
+    "text": "Speak",
+    "start": 0.0
+   },
+   {
+    "text": "French,",
+    "start": 0.32
+   },
+   {
+    "text": "German,",
+    "start": 0.8
+   },
+   {
+    "text": "Spanish",
+    "start": 1.253
+   },
+   {
+    "text": "or",
+    "start": 1.707
+   },
+   {
+    "text": "Portuguese.",
+    "start": 2.16
+   },
+   {
+    "text": "Claude",
+    "start": 3.04
+   },
+   {
+    "text": "still",
+    "start": 4.08
+   },
+   {
+    "text": "gets",
+    "start": 4.32
+   },
+   {
+    "text": "English.",
+    "start": 4.56
+   }
+  ],
+  "aligned": "09b5f8fc2966feacefe59d8640c393e494eeb6d7",
+  "timed": [
+   {
+    "text": "Speak",
+    "start": 0.0
+   },
+   {
+    "text": "French,",
+    "start": 0.32
+   },
+   {
+    "text": "German,",
+    "start": 0.8
+   },
+   {
+    "text": "Spanish",
+    "start": 1.253
+   },
+   {
+    "text": "or",
+    "start": 1.707
+   },
+   {
+    "text": "Portuguese.",
+    "start": 2.16
+   },
+   {
+    "text": "Claude",
+    "start": 3.76
+   },
+   {
+    "text": "still",
+    "start": 4.16
+   },
+   {
+    "text": "gets",
+    "start": 4.4
+   },
+   {
+    "text": "English.",
+    "start": 4.64
+   }
+  ]
+ },
+ "d_french": {
+  "hash": "6d7ea28d2f085702285dc16b8d00825a2f4bf3b9",
+  "duration": 5.28,
+  "words": [
+   {
+    "text": "Euh, est-ce que tu peux ajouter des tests",
+    "start": 0.0,
+    "end": 1.824
+   },
+   {
+    "text": "pour",
+    "start": 1.824,
+    "end": 2.0064
+   },
+   {
+    "text": "la",
+    "start": 2.0064,
+    "end": 2.1888
+   },
+   {
+    "text": "page",
+    "start": 2.1888,
+    "end": 2.48
+   },
+   {
+    "text": "de",
+    "start": 2.48,
+    "end": 2.64
+   },
+   {
+    "text": "connexion ?",
+    "start": 2.64,
+    "end": 3.68
+   },
+   {
+    "text": "Surtout",
+    "start": 3.68,
+    "end": 4.0
+   },
+   {
+    "text": "les",
+    "start": 4.0,
+    "end": 4.16
+   },
+   {
+    "text": "cas",
+    "start": 4.16,
+    "end": 4.32
+   },
+   {
+    "text": "d'erreur.",
+    "start": 4.32,
+    "end": 4.88
+   }
+  ],
+  "heard": [
+   {
+    "text": "Est-ce que tu peux",
+    "start": 0.0,
+    "end": 0.56
+   },
+   {
+    "text": "ajouter des",
+    "start": 0.56,
+    "end": 1.2
+   },
+   {
+    "text": "tests",
+    "start": 1.2,
+    "end": 1.68
+   },
+   {
+    "text": "pour",
+    "start": 1.68,
+    "end": 1.92
+   },
+   {
+    "text": "la",
+    "start": 1.92,
+    "end": 2.08
+   },
+   {
+    "text": "page",
+    "start": 2.08,
+    "end": 2.32
+   },
+   {
+    "text": "de",
+    "start": 2.32,
+    "end": 2.48
+   },
+   {
+    "text": "connexion ?",
+    "start": 2.48,
+    "end": 3.04
+   },
+   {
+    "text": "Surtout les cas",
+    "start": 3.04,
+    "end": 3.92
+   },
+   {
+    "text": "d'erreur.",
+    "start": 3.92,
+    "end": 4.64
+   }
+  ],
+  "script": [
+   {
+    "text": "Euh,",
+    "start": 0.15
+   },
+   {
+    "text": "est-ce",
+    "start": 0.3
+   },
+   {
+    "text": "que",
+    "start": 0.45
+   },
+   {
+    "text": "tu",
+    "start": 0.6
+   },
+   {
+    "text": "peux",
+    "start": 0.75
+   },
+   {
+    "text": "ajouter",
+    "start": 0.9
+   },
+   {
+    "text": "des",
+    "start": 1.05
+   },
+   {
+    "text": "tests",
+    "start": 1.2
+   },
+   {
+    "text": "pour",
+    "start": 1.68
+   },
+   {
+    "text": "la",
+    "start": 1.92
+   },
+   {
+    "text": "page",
+    "start": 2.08
+   },
+   {
+    "text": "de",
+    "start": 2.32
+   },
+   {
+    "text": "connexion",
+    "start": 2.48
+   },
+   {
+    "text": "?",
+    "start": 2.768
+   },
+   {
+    "text": "Surtout",
+    "start": 3.056
+   },
+   {
+    "text": "les",
+    "start": 3.344
+   },
+   {
+    "text": "cas",
+    "start": 3.632
+   },
+   {
+    "text": "d'erreur.",
+    "start": 3.92
+   }
+  ],
+  "aligned": "6d7ea28d2f085702285dc16b8d00825a2f4bf3b9",
+  "timed": [
+   {
+    "text": "Euh,",
+    "start": 0.15
+   },
+   {
+    "text": "est-ce",
+    "start": 0.3
+   },
+   {
+    "text": "que",
+    "start": 0.45
+   },
+   {
+    "text": "tu",
+    "start": 0.6
+   },
+   {
+    "text": "peux",
+    "start": 0.75
+   },
+   {
+    "text": "ajouter",
+    "start": 0.9
+   },
+   {
+    "text": "des",
+    "start": 1.05
+   },
+   {
+    "text": "tests",
+    "start": 1.2
+   },
+   {
+    "text": "pour",
+    "start": 1.824
+   },
+   {
+    "text": "la",
+    "start": 2.006
+   },
+   {
+    "text": "page",
+    "start": 2.189
+   },
+   {
+    "text": "de",
+    "start": 2.48
+   },
+   {
+    "text": "connexion",
+    "start": 2.64
+   },
+   {
+    "text": "?",
+    "start": 2.768
+   },
+   {
+    "text": "Surtout",
+    "start": 3.68
+   },
+   {
+    "text": "les",
+    "start": 4.0
+   },
+   {
+    "text": "cas",
+    "start": 4.16
+   },
+   {
+    "text": "d'erreur.",
+    "start": 4.32
+   }
+  ]
+ },
+ "f_answer": {
+  "hash": "a6dba67b2476ab437df9742b7cc656b785198a9f",
+  "duration": 4.32,
+  "words": [
+   {
+    "text": "Ask for the answer out loud, and Claude's",
+    "start": 0.0,
+    "end": 2.32
+   },
+   {
+    "text": "reply",
+    "start": 2.32,
+    "end": 2.72
+   },
+   {
+    "text": "is",
+    "start": 2.72,
+    "end": 2.88
+   },
+   {
+    "text": "read",
+    "start": 2.88,
+    "end": 3.12
+   },
+   {
+    "text": "back",
+    "start": 3.12,
+    "end": 3.36
+   },
+   {
+    "text": "to",
+    "start": 3.36,
+    "end": 3.52
+   },
+   {
+    "text": "you.",
+    "start": 3.52,
+    "end": 3.92
+   }
+  ],
+  "heard": [
+   {
+    "text": "ask",
+    "start": 0.0,
+    "end": 0.24
+   },
+   {
+    "text": "for the",
+    "start": 0.24,
+    "end": 0.4
+   },
+   {
+    "text": "answer out",
+    "start": 0.4,
+    "end": 0.8
+   },
+   {
+    "text": "loud",
+    "start": 0.8,
+    "end": 1.36
+   },
+   {
+    "text": "and",
+    "start": 1.36,
+    "end": 1.68
+   },
+   {
+    "text": "claude's",
+    "start": 1.68,
+    "end": 2.16
+   },
+   {
+    "text": "reply",
+    "start": 2.16,
+    "end": 2.64
+   },
+   {
+    "text": "is",
+    "start": 2.64,
+    "end": 2.88
+   },
+   {
+    "text": "read",
+    "start": 2.88,
+    "end": 3.04
+   },
+   {
+    "text": "back",
+    "start": 3.04,
+    "end": 3.28
+   },
+   {
+    "text": "to",
+    "start": 3.28,
+    "end": 3.44
+   },
+   {
+    "text": "you.",
+    "start": 3.44,
+    "end": 3.6
+   }
+  ],
+  "script": [
+   {
+    "text": "Ask",
+    "start": 0.0
+   },
+   {
+    "text": "for",
+    "start": 0.16
+   },
+   {
+    "text": "the",
+    "start": 0.32
+   },
+   {
+    "text": "answer",
+    "start": 0.48
+   },
+   {
+    "text": "out",
+    "start": 0.64
+   },
+   {
+    "text": "loud,",
+    "start": 0.8
+   },
+   {
+    "text": "and",
+    "start": 1.36
+   },
+   {
+    "text": "Claude's",
+    "start": 1.68
+   },
+   {
+    "text": "reply",
+    "start": 2.16
+   },
+   {
+    "text": "is",
+    "start": 2.64
+   },
+   {
+    "text": "read",
+    "start": 2.88
+   },
+   {
+    "text": "back",
+    "start": 3.04
+   },
+   {
+    "text": "to",
+    "start": 3.28
+   },
+   {
+    "text": "you.",
+    "start": 3.44
+   }
+  ],
+  "aligned": "a6dba67b2476ab437df9742b7cc656b785198a9f",
+  "timed": [
+   {
+    "text": "Ask",
+    "start": 0.0
+   },
+   {
+    "text": "for",
+    "start": 0.16
+   },
+   {
+    "text": "the",
+    "start": 0.32
+   },
+   {
+    "text": "answer",
+    "start": 0.48
+   },
+   {
+    "text": "out",
+    "start": 0.64
+   },
+   {
+    "text": "loud,",
+    "start": 0.8
+   },
+   {
+    "text": "and",
+    "start": 1.36
+   },
+   {
+    "text": "Claude's",
+    "start": 1.68
+   },
+   {
+    "text": "reply",
+    "start": 2.32
+   },
+   {
+    "text": "is",
+    "start": 2.72
+   },
+   {
+    "text": "read",
+    "start": 2.88
+   },
+   {
+    "text": "back",
+    "start": 3.12
+   },
+   {
+    "text": "to",
+    "start": 3.36
+   },
+   {
+    "text": "you.",
+    "start": 3.52
+   }
+  ]
+ },
+ "c_answer": {
+  "hash": "fcad3f66dc2a46fe5fef3e97a6f77f8a57d971a3",
+  "duration": 5.44,
+  "words": [
+   {
+    "text": "Done. Login is limited to ten requests",
+    "start": 0.0,
+    "end": 2.72
+   },
+   {
+    "text": "a",
+    "start": 2.72,
+    "end": 2.8
+   },
+   {
+    "text": "minute,",
+    "start": 2.8,
+    "end": 3.6
+   },
+   {
+    "text": "and",
+    "start": 3.6,
+    "end": 3.68
+   },
+   {
+    "text": "the",
+    "start": 3.68,
+    "end": 3.76
+   },
+   {
+    "text": "new",
+    "start": 3.76,
+    "end": 4.0
+   },
+   {
+    "text": "test",
+    "start": 4.0,
+    "end": 4.32
+   },
+   {
+    "text": "passes.",
+    "start": 4.32,
+    "end": 5.04
+   }
+  ],
+  "heard": [
+   {
+    "text": "done.",
+    "start": 0.0,
+    "end": 0.32
+   },
+   {
+    "text": "Login is",
+    "start": 0.32,
+    "end": 1.28
+   },
+   {
+    "text": "limited",
+    "start": 1.28,
+    "end": 1.76
+   },
+   {
+    "text": "to",
+    "start": 1.76,
+    "end": 2.0
+   },
+   {
+    "text": "10",
+    "start": 2.0,
+    "end": 2.32
+   },
+   {
+    "text": "requests a",
+    "start": 2.32,
+    "end": 2.64
+   },
+   {
+    "text": "minute",
+    "start": 2.64,
+    "end": 3.12
+   },
+   {
+    "text": "and",
+    "start": 3.12,
+    "end": 3.68
+   },
+   {
+    "text": "the",
+    "start": 3.68,
+    "end": 3.84
+   },
+   {
+    "text": "new",
+    "start": 3.84,
+    "end": 4.0
+   },
+   {
+    "text": "test",
+    "start": 4.0,
+    "end": 4.24
+   },
+   {
+    "text": "passes.",
+    "start": 4.24,
+    "end": 4.88
+   }
+  ],
+  "script": [
+   {
+    "text": "Done.",
+    "start": 0.0
+   },
+   {
+    "text": "Login",
+    "start": 0.427
+   },
+   {
+    "text": "is",
+    "start": 0.853
+   },
+   {
+    "text": "limited",
+    "start": 1.28
+   },
+   {
+    "text": "to",
+    "start": 1.76
+   },
+   {
+    "text": "ten",
+    "start": 1.98
+   },
+   {
+    "text": "requests",
+    "start": 2.2
+   },
+   {
+    "text": "a",
+    "start": 2.42
+   },
+   {
+    "text": "minute,",
+    "start": 2.64
+   },
+   {
+    "text": "and",
+    "start": 3.12
+   },
+   {
+    "text": "the",
+    "start": 3.68
+   },
+   {
+    "text": "new",
+    "start": 3.84
+   },
+   {
+    "text": "test",
+    "start": 4.0
+   },
+   {
+    "text": "passes.",
+    "start": 4.24
+   }
+  ],
+  "aligned": "fcad3f66dc2a46fe5fef3e97a6f77f8a57d971a3",
+  "timed": [
+   {
+    "text": "Done.",
+    "start": 0.0
+   },
+   {
+    "text": "Login",
+    "start": 0.427
+   },
+   {
+    "text": "is",
+    "start": 0.853
+   },
+   {
+    "text": "limited",
+    "start": 1.28
+   },
+   {
+    "text": "to",
+    "start": 1.76
+   },
+   {
+    "text": "ten",
+    "start": 1.98
+   },
+   {
+    "text": "requests",
+    "start": 2.2
+   },
+   {
+    "text": "a",
+    "start": 2.72
+   },
+   {
+    "text": "minute,",
+    "start": 2.8
+   },
+   {
+    "text": "and",
+    "start": 3.6
+   },
+   {
+    "text": "the",
+    "start": 3.68
+   },
+   {
+    "text": "new",
+    "start": 3.76
+   },
+   {
+    "text": "test",
+    "start": 4.0
+   },
+   {
+    "text": "passes.",
+    "start": 4.32
+   }
+  ]
+ },
+ "f_ask": {
+  "hash": "a902e9e7a5d8d43642881f8daa7f2c713faa9beb",
+  "duration": 5.76,
+  "words": [
+   {
+    "text": "When Claude asks you something, parley chimes",
+    "start": 0.0,
+    "end": 2.8
+   },
+   {
+    "text": "and",
+    "start": 2.8,
+    "end": 2.96
+   },
+   {
+    "text": "opens",
+    "start": 2.96,
+    "end": 3.28
+   },
+   {
+    "text": "the",
+    "start": 3.28,
+    "end": 3.44
+   },
+   {
+    "text": "mic.",
+    "start": 3.44,
+    "end": 4.32
+   },
+   {
+    "text": "You",
+    "start": 4.32,
+    "end": 4.48
+   },
+   {
+    "text": "just",
+    "start": 4.48,
+    "end": 4.72
+   },
+   {
+    "text": "answer.",
+    "start": 4.72,
+    "end": 5.36
+   }
+  ],
+  "heard": [
+   {
+    "text": "When",
+    "start": 0.0,
+    "end": 0.16
+   },
+   {
+    "text": "Claude",
+    "start": 0.16,
+    "end": 0.56
+   },
+   {
+    "text": "asks you",
+    "start": 0.56,
+    "end": 0.88
+   },
+   {
+    "text": "something,",
+    "start": 0.88,
+    "end": 1.52
+   },
+   {
+    "text": "Parley",
+    "start": 1.52,
+    "end": 2.16
+   },
+   {
+    "text": "chimes",
+    "start": 2.16,
+    "end": 2.72
+   },
+   {
+    "text": "and",
+    "start": 2.72,
+    "end": 2.96
+   },
+   {
+    "text": "opens the",
+    "start": 2.96,
+    "end": 3.2
+   },
+   {
+    "text": "mic.",
+    "start": 3.2,
+    "end": 3.68
+   },
+   {
+    "text": "You",
+    "start": 3.68,
+    "end": 4.4
+   },
+   {
+    "text": "just",
+    "start": 4.4,
+    "end": 4.64
+   },
+   {
+    "text": "answer.",
+    "start": 4.64,
+    "end": 5.04
+   }
+  ],
+  "script": [
+   {
+    "text": "When",
+    "start": 0.0
+   },
+   {
+    "text": "Claude",
+    "start": 0.16
+   },
+   {
+    "text": "asks",
+    "start": 0.4
+   },
+   {
+    "text": "you",
+    "start": 0.64
+   },
+   {
+    "text": "something,",
+    "start": 0.88
+   },
+   {
+    "text": "parley",
+    "start": 1.52
+   },
+   {
+    "text": "chimes",
+    "start": 2.16
+   },
+   {
+    "text": "and",
+    "start": 2.72
+   },
+   {
+    "text": "opens",
+    "start": 2.88
+   },
+   {
+    "text": "the",
+    "start": 3.04
+   },
+   {
+    "text": "mic.",
+    "start": 3.2
+   },
+   {
+    "text": "You",
+    "start": 3.68
+   },
+   {
+    "text": "just",
+    "start": 4.4
+   },
+   {
+    "text": "answer.",
+    "start": 4.64
+   }
+  ],
+  "aligned": "a902e9e7a5d8d43642881f8daa7f2c713faa9beb",
+  "timed": [
+   {
+    "text": "When",
+    "start": 0.0
+   },
+   {
+    "text": "Claude",
+    "start": 0.16
+   },
+   {
+    "text": "asks",
+    "start": 0.4
+   },
+   {
+    "text": "you",
+    "start": 0.64
+   },
+   {
+    "text": "something,",
+    "start": 0.88
+   },
+   {
+    "text": "parley",
+    "start": 1.52
+   },
+   {
+    "text": "chimes",
+    "start": 2.16
+   },
+   {
+    "text": "and",
+    "start": 2.8
+   },
+   {
+    "text": "opens",
+    "start": 2.96
+   },
+   {
+    "text": "the",
+    "start": 3.28
+   },
+   {
+    "text": "mic.",
+    "start": 3.44
+   },
+   {
+    "text": "You",
+    "start": 4.32
+   },
+   {
+    "text": "just",
+    "start": 4.48
+   },
+   {
+    "text": "answer.",
+    "start": 4.72
+   }
+  ]
+ },
+ "d_reply": {
+  "hash": "165fbbd2b76a5a24796f92b62862c32dbc11acf0",
+  "duration": 4.32,
+  "words": [
+   {
+    "text": "Yes, add the test. And, uh, tell me out",
+    "start": 0.0,
+    "end": 2.8
+   },
+   {
+    "text": "loud",
+    "start": 2.8,
+    "end": 3.12
+   },
+   {
+    "text": "when",
+    "start": 3.12,
+    "end": 3.28
+   },
+   {
+    "text": "it's",
+    "start": 3.28,
+    "end": 3.52
+   },
+   {
+    "text": "done.",
+    "start": 3.52,
+    "end": 3.92
+   }
+  ],
+  "heard": [
+   {
+    "text": "yes,",
+    "start": 0.0,
+    "end": 0.32
+   },
+   {
+    "text": "add",
+    "start": 0.32,
+    "end": 0.72
+   },
+   {
+    "text": "the",
+    "start": 0.72,
+    "end": 0.88
+   },
+   {
+    "text": "test",
+    "start": 0.88,
+    "end": 1.2
+   },
+   {
+    "text": "and",
+    "start": 1.2,
+    "end": 2.0
+   },
+   {
+    "text": "tell",
+    "start": 2.0,
+    "end": 2.48
+   },
+   {
+    "text": "me",
+    "start": 2.48,
+    "end": 2.64
+   },
+   {
+    "text": "out",
+    "start": 2.64,
+    "end": 2.8
+   },
+   {
+    "text": "loud",
+    "start": 2.8,
+    "end": 3.04
+   },
+   {
+    "text": "when",
+    "start": 3.04,
+    "end": 3.2
+   },
+   {
+    "text": "it's",
+    "start": 3.2,
+    "end": 3.36
+   },
+   {
+    "text": "done.",
+    "start": 3.36,
+    "end": 3.68
+   }
+  ],
+  "script": [
+   {
+    "text": "Yes,",
+    "start": 0.0
+   },
+   {
+    "text": "add",
+    "start": 0.32
+   },
+   {
+    "text": "the",
+    "start": 0.72
+   },
+   {
+    "text": "test.",
+    "start": 0.88
+   },
+   {
+    "text": "And,",
+    "start": 1.2
+   },
+   {
+    "text": "uh,",
+    "start": 1.6
+   },
+   {
+    "text": "tell",
+    "start": 2.0
+   },
+   {
+    "text": "me",
+    "start": 2.48
+   },
+   {
+    "text": "out",
+    "start": 2.64
+   },
+   {
+    "text": "loud",
+    "start": 2.8
+   },
+   {
+    "text": "when",
+    "start": 3.04
+   },
+   {
+    "text": "it's",
+    "start": 3.2
+   },
+   {
+    "text": "done.",
+    "start": 3.36
+   }
+  ],
+  "aligned": "165fbbd2b76a5a24796f92b62862c32dbc11acf0",
+  "timed": [
+   {
+    "text": "Yes,",
+    "start": 0.0
+   },
+   {
+    "text": "add",
+    "start": 0.32
+   },
+   {
+    "text": "the",
+    "start": 0.72
+   },
+   {
+    "text": "test.",
+    "start": 0.88
+   },
+   {
+    "text": "And,",
+    "start": 1.2
+   },
+   {
+    "text": "uh,",
+    "start": 1.6
+   },
+   {
+    "text": "tell",
+    "start": 2.0
+   },
+   {
+    "text": "me",
+    "start": 2.48
+   },
+   {
+    "text": "out",
+    "start": 2.64
+   },
+   {
+    "text": "loud",
+    "start": 2.8
+   },
+   {
+    "text": "when",
+    "start": 3.12
+   },
+   {
+    "text": "it's",
+    "start": 3.28
+   },
+   {
+    "text": "done.",
+    "start": 3.52
+   }
+  ]
+ },
+ "f_learn": {
+  "hash": "a2c25a23b4ad2a61df0270a8c85838459f7afec4",
+  "duration": 3.68,
+  "words": [
+   {
+    "text": "Fix a misheard word once, and parley remembers",
+    "start": 0.0,
+    "end": 2.88
+   },
+   {
+    "text": "it.",
+    "start": 2.88,
+    "end": 3.28
+   }
+  ],
+  "heard": [
+   {
+    "text": "Fix a",
+    "start": 0.0,
+    "end": 0.16
+   },
+   {
+    "text": "misheard",
+    "start": 0.16,
+    "end": 0.72
+   },
+   {
+    "text": "word",
+    "start": 0.72,
+    "end": 1.04
+   },
+   {
+    "text": "once",
+    "start": 1.04,
+    "end": 1.44
+   },
+   {
+    "text": "and",
+    "start": 1.44,
+    "end": 1.84
+   },
+   {
+    "text": "parley",
+    "start": 1.84,
+    "end": 2.24
+   },
+   {
+    "text": "remembers it.",
+    "start": 2.24,
+    "end": 2.8
+   }
+  ],
+  "script": [
+   {
+    "text": "Fix",
+    "start": 0.053
+   },
+   {
+    "text": "a",
+    "start": 0.107
+   },
+   {
+    "text": "misheard",
+    "start": 0.16
+   },
+   {
+    "text": "word",
+    "start": 0.72
+   },
+   {
+    "text": "once,",
+    "start": 1.04
+   },
+   {
+    "text": "and",
+    "start": 1.44
+   },
+   {
+    "text": "parley",
+    "start": 1.84
+   },
+   {
+    "text": "remembers",
+    "start": 2.353
+   },
+   {
+    "text": "it.",
+    "start": 2.867
+   }
+  ],
+  "aligned": "a2c25a23b4ad2a61df0270a8c85838459f7afec4",
+  "timed": [
+   {
+    "text": "Fix",
+    "start": 0.053
+   },
+   {
+    "text": "a",
+    "start": 0.107
+   },
+   {
+    "text": "misheard",
+    "start": 0.16
+   },
+   {
+    "text": "word",
+    "start": 0.72
+   },
+   {
+    "text": "once,",
+    "start": 1.04
+   },
+   {
+    "text": "and",
+    "start": 1.44
+   },
+   {
+    "text": "parley",
+    "start": 1.84
+   },
+   {
+    "text": "remembers",
+    "start": 2.353
+   },
+   {
+    "text": "it.",
+    "start": 2.88
+   }
+  ]
+ },
+ "f_history": {
+  "hash": "109fd243cc9d77dfdf8c1b04c6998fa0c3312090",
+  "duration": 5.12,
+  "words": [
+   {
+    "text": "And nothing is lost. Every turn is kept, so you",
+    "start": 0.0,
+    "end": 3.28
+   },
+   {
+    "text": "can",
+    "start": 3.28,
+    "end": 3.44
+   },
+   {
+    "text": "always",
+    "start": 3.44,
+    "end": 3.76
+   },
+   {
+    "text": "see",
+    "start": 3.76,
+    "end": 3.92
+   },
+   {
+    "text": "what",
+    "start": 3.92,
+    "end": 4.08
+   },
+   {
+    "text": "it",
+    "start": 4.08,
+    "end": 4.16
+   },
+   {
+    "text": "heard.",
+    "start": 4.16,
+    "end": 4.72
+   }
+  ],
+  "heard": [
+   {
+    "text": "And",
+    "start": 0.0,
+    "end": 0.16
+   },
+   {
+    "text": "nothing is",
+    "start": 0.16,
+    "end": 0.48
+   },
+   {
+    "text": "lost.",
+    "start": 0.48,
+    "end": 1.04
+   },
+   {
+    "text": "Every",
+    "start": 1.04,
+    "end": 1.76
+   },
+   {
+    "text": "turn",
+    "start": 1.76,
+    "end": 2.08
+   },
+   {
+    "text": "is",
+    "start": 2.08,
+    "end": 2.24
+   },
+   {
+    "text": "kept,",
+    "start": 2.24,
+    "end": 2.64
+   },
+   {
+    "text": "so",
+    "start": 2.64,
+    "end": 3.12
+   },
+   {
+    "text": "you",
+    "start": 3.12,
+    "end": 3.28
+   },
+   {
+    "text": "can",
+    "start": 3.28,
+    "end": 3.44
+   },
+   {
+    "text": "always",
+    "start": 3.44,
+    "end": 3.68
+   },
+   {
+    "text": "see",
+    "start": 3.68,
+    "end": 3.92
+   },
+   {
+    "text": "what it",
+    "start": 3.92,
+    "end": 4.08
+   },
+   {
+    "text": "heard.",
+    "start": 4.08,
+    "end": 4.48
+   }
+  ],
+  "script": [
+   {
+    "text": "And",
+    "start": 0.0
+   },
+   {
+    "text": "nothing",
+    "start": 0.16
+   },
+   {
+    "text": "is",
+    "start": 0.32
+   },
+   {
+    "text": "lost.",
+    "start": 0.48
+   },
+   {
+    "text": "Every",
+    "start": 1.04
+   },
+   {
+    "text": "turn",
+    "start": 1.76
+   },
+   {
+    "text": "is",
+    "start": 2.08
+   },
+   {
+    "text": "kept,",
+    "start": 2.24
+   },
+   {
+    "text": "so",
+    "start": 2.64
+   },
+   {
+    "text": "you",
+    "start": 3.12
+   },
+   {
+    "text": "can",
+    "start": 3.28
+   },
+   {
+    "text": "always",
+    "start": 3.44
+   },
+   {
+    "text": "see",
+    "start": 3.68
+   },
+   {
+    "text": "what",
+    "start": 3.813
+   },
+   {
+    "text": "it",
+    "start": 3.947
+   },
+   {
+    "text": "heard.",
+    "start": 4.08
+   }
+  ],
+  "aligned": "109fd243cc9d77dfdf8c1b04c6998fa0c3312090",
+  "timed": [
+   {
+    "text": "And",
+    "start": 0.0
+   },
+   {
+    "text": "nothing",
+    "start": 0.16
+   },
+   {
+    "text": "is",
+    "start": 0.32
+   },
+   {
+    "text": "lost.",
+    "start": 0.48
+   },
+   {
+    "text": "Every",
+    "start": 1.04
+   },
+   {
+    "text": "turn",
+    "start": 1.76
+   },
+   {
+    "text": "is",
+    "start": 2.08
+   },
+   {
+    "text": "kept,",
+    "start": 2.24
+   },
+   {
+    "text": "so",
+    "start": 2.64
+   },
+   {
+    "text": "you",
+    "start": 3.12
+   },
+   {
+    "text": "can",
+    "start": 3.28
+   },
+   {
+    "text": "always",
+    "start": 3.44
+   },
+   {
+    "text": "see",
+    "start": 3.76
+   },
+   {
+    "text": "what",
+    "start": 3.92
+   },
+   {
+    "text": "it",
+    "start": 4.08
+   },
+   {
+    "text": "heard.",
+    "start": 4.16
+   }
+  ]
+ },
+ "n_outro": {
+  "hash": "87a5dc13dd0c6be0da9acf97812302850e93fc85",
+  "duration": 3.12,
+  "words": [
+   {
+    "text": "parley. Just talk to Claude Code.",
+    "start": 0.0,
+    "end": 2.72
+   }
+  ],
+  "heard": [
+   {
+    "text": "parley",
+    "start": 0.0,
+    "end": 0.64
+   },
+   {
+    "text": "just",
+    "start": 0.64,
+    "end": 1.36
+   },
+   {
+    "text": "talk",
+    "start": 1.36,
+    "end": 1.6
+   },
+   {
+    "text": "to",
+    "start": 1.6,
+    "end": 1.84
+   },
+   {
+    "text": "claude",
+    "start": 1.84,
+    "end": 2.16
+   },
+   {
+    "text": "code.",
+    "start": 2.16,
+    "end": 2.56
+   }
+  ],
+  "script": [
+   {
+    "text": "parley.",
+    "start": 0.0
+   },
+   {
+    "text": "Just",
+    "start": 0.64
+   },
+   {
+    "text": "talk",
+    "start": 1.36
+   },
+   {
+    "text": "to",
+    "start": 1.6
+   },
+   {
+    "text": "Claude",
+    "start": 1.84
+   },
+   {
+    "text": "Code.",
+    "start": 2.16
+   }
+  ],
+  "aligned": "87a5dc13dd0c6be0da9acf97812302850e93fc85",
+  "timed": [
+   {
+    "text": "parley.",
+    "start": 0.0
+   },
+   {
+    "text": "Just",
+    "start": 0.64
+   },
+   {
+    "text": "talk",
+    "start": 1.36
+   },
+   {
+    "text": "to",
+    "start": 1.6
+   },
+   {
+    "text": "Claude",
+    "start": 1.84
+   },
+   {
+    "text": "Code.",
+    "start": 2.16
+   }
+  ]
+ }
+}

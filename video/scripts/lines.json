@@ -1,0 +1,88 @@
+{
+ "n_problem1": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "You think faster than you type."
+ },
+ "n_problem2": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "So you try dictation. And it writes down exactly what you said. <break time=\"0.3s\" /> Every um. <break time=\"0.2s\" /> Every false start. <break time=\"0.2s\" /> Every wait, no."
+ },
+ "n_problem3": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "And you spend longer fixing the prompt than it took to say it."
+ },
+ "n_intro": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "Meet parley. Push to talk for Claude Code, with speech by Gradium."
+ },
+ "n_how": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "Hold a key. <break time=\"0.25s\" /> Talk. <break time=\"0.25s\" /> Let go."
+ },
+ "d_before": {
+  "voice": "9QHzSiOYUD-RzEzM",
+  "config": {
+   "temp": 0.9,
+   "padding_bonus": 0.6
+  },
+  "text": "Um, so, can you, uh <break time=\"0.4s\" /> add rate limiting to the, the login endpoint? Like, five requests a minute. <break time=\"0.3s\" /> Wait, no, actually, make that ten. <break time=\"0.3s\" /> And, uh, put it in the auth file."
+ },
+ "n_gets": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "That's what you said. Here's what Claude gets."
+ },
+ "d_after": {
+  "voice": "9QHzSiOYUD-RzEzM",
+  "config": {
+   "temp": 0.4
+  },
+  "text": "Can you add rate limiting to the login endpoint? Like ten requests a minute, and put it in auth dot ts."
+ },
+ "n_compare": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "The fillers are gone. Your correction is applied. And the file is found by name."
+ },
+ "f_commands": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "Say stop, undo that, clear the chat, or compact, and parley presses the keys for you."
+ },
+ "f_lang": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "Speak French, German, Spanish or Portuguese. Claude still gets English."
+ },
+ "d_french": {
+  "voice": "YhIHaAfQ0cQPDV9R",
+  "text": "Euh, est-ce que tu peux ajouter des tests pour la page de connexion ? Surtout les cas d'erreur."
+ },
+ "f_answer": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "Ask for the answer out loud, and Claude's reply is read back to you."
+ },
+ "c_answer": {
+  "voice": "NbpkqMVS3CJeq2j8",
+  "text": "Done. Login is limited to ten requests a minute, and the new test passes."
+ },
+ "f_ask": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "When Claude asks you something, parley chimes and opens the mic. You just answer."
+ },
+ "d_reply": {
+  "voice": "9QHzSiOYUD-RzEzM",
+  "config": {
+   "temp": 0.5
+  },
+  "text": "Yes, add the test. And, uh, tell me out loud when it's done."
+ },
+ "f_learn": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "Fix a misheard word once, and parley remembers it."
+ },
+ "f_history": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "And nothing is lost. Every turn is kept, so you can always see what it heard."
+ },
+ "n_outro": {
+  "voice": "YTpq7expH9539ERJ",
+  "text": "parley. Just talk to Claude Code."
+ }
+}
